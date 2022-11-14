@@ -5,8 +5,7 @@
 
 public class Task
 {
-    internal readonly int id;
-
+    
     // atributos
 
     [Key, Column("IdTask")]
