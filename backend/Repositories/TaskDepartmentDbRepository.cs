@@ -40,7 +40,7 @@ public class TaskDepartmentDbRepository : ITaskDepartmentRepository
 
         Context.TaskDepartments.Update(taskDepartmentEntity);
 
-        Context.SaveChanges();
+        //Context.SaveChanges();
 
         return taskDepartmentEntity;
         
@@ -67,7 +67,7 @@ public class TaskDepartmentDbRepository : ITaskDepartmentRepository
 
         Context.TaskDepartments.Remove(taskDepartment);
 
-        Context.SaveChanges();
+        //Context.SaveChanges();
         return true;
     }
 }
