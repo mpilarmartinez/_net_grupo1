@@ -17,12 +17,14 @@ public class TaskDepartmentController
     
     // métodos
 
+    //este metodo funciona
     [HttpGet] // GET api/taskDepartments
     public List<TaskDepartment> FindAllDepartment()
     {
         return TaskDepartmentRepo.FindAllDepartment();
     }
 
+    //este metodo funciona
     [HttpGet("{id}")] // GET api/taskDepartments/3
     public TaskDepartment FindByIdDepartment(int id)
     {
@@ -42,6 +44,7 @@ public class TaskDepartmentController
         return TaskDepartmentRepo.UpdateDepartment(taskDepartment);
     }
 
+    //este metodo funciona
     [HttpDelete("{id}")]
     public void DeleteById(int id)
     {
