@@ -13,6 +13,12 @@ builder.Services.AddDbContext<AppDbContext>(
     options => options.UseMySql(url, ServerVersion.AutoDetect(url))
 );
 
+// AÑADIR REPOSITORIOS
+builder.Services.AddScoped<ITaskDepartmentRepository, TaskDepartmentDbRepository>();
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
