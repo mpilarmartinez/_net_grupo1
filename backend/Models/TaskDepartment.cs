@@ -1,7 +1,7 @@
 ﻿namespace backend.Models;
 
 //nombre de la tabla
-[Table("TaskDepartment")]
+[Table("taskdepartment")]
 
 public class TaskDepartment
 {
