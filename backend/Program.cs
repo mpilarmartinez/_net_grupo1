@@ -7,6 +7,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// CONFIGURACIÓN BASE DE DATOS MYSQL
+var url = "server=localhost;port=3306;user=root;password=admin;database=net_grupo1";
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseMySql(url, ServerVersion.AutoDetect(url))
+);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
