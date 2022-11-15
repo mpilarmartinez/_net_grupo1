@@ -4,8 +4,11 @@ namespace backend.Repositories;
 
     public interface ITaskRepository
     {
+        //Guardar nuevo
+        Task CreateTask(Task task); //OK
+
         // buscar por id
-        Task FindById(int id);
+        Task FindByIdTask(int id);
 
         // buscar  todos
         List<Task> FindAll();
@@ -14,19 +17,16 @@ namespace backend.Repositories;
         List<Task> FindByImportanceTask(string importancetask);
 
         // buscar por status
-        List<Task> FindByStatus(string statustask);
+        List<Task> FindByStatusTask(string statustask);
 
         // buscar por id incluyendo asociaciones: Project, TaskDepartment
         Task FindByIdWithInclude(int id);
-
-        //Guardar nuevo
-        Task CreateTask(Task task);
 
         //Actualizar Task
         Task UpdateTask(Task task);
 
         // borrar por id
-        bool Remove(int id);
+        bool RemoveByIdTask(int id);
 
     }
 
