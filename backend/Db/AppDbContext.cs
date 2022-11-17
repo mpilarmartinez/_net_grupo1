@@ -1,11 +1,16 @@
 ﻿namespace backend.Db
 {
-    public class AppDbContext
+    public class AppDbContext : DbContext
     {
-        internal object Tasks;
+        public DbSet<Task> Tasks { get; set; }
 
         public DbSet<User> Users { get; set; }
 
-        public DbSet<TaskDepartment> Tasks { get; set; }
+        public DbSet<TaskDepartment> TaskDepartments { get; set; }
+
+
+
+        public AppDbContext(DbContextOptions options) : base(options){        }
+
     }
 }

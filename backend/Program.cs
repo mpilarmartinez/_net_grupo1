@@ -5,16 +5,28 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen();
+
+// CONFIGURACIÓN BASE DE DATOS MYSQL
+var url = "server=localhost;port=3306;user=root;password=admin;database=net_grupo1";
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseMySql(url, ServerVersion.AutoDetect(url))
+);
+
+// AÑADIR REPOSITORIOS
+builder.Services.AddScoped<ITaskDepartmentRepository, TaskDepartmentDbRepository>();
+
+
+
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-/*if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-}*/
+}
 
 app.UseHttpsRedirection();
 

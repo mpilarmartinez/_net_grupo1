@@ -18,11 +18,11 @@ public class TaskDepartmentDbRepository : ITaskDepartmentRepository
     {
         return taskDepartment;
         //si tiene id es update y no se crea
-        /*if (taskDepartment.Id > 0) // 1
+        if (taskDepartment.IdDepartment > 0) // 1
             return UpdateDepartment(taskDepartment);
         Context.TaskDepartments.Add(taskDepartment);
         Context.SaveChanges();
-        return taskDepartment;*/
+        return taskDepartment;
     }
 
     //Actualizar TaskDepartmen existente
@@ -40,7 +40,7 @@ public class TaskDepartmentDbRepository : ITaskDepartmentRepository
 
         Context.TaskDepartments.Update(taskDepartmentEntity);
 
-        //Context.SaveChanges();
+        Context.SaveChanges();
 
         return taskDepartmentEntity;
         
@@ -67,7 +67,7 @@ public class TaskDepartmentDbRepository : ITaskDepartmentRepository
 
         Context.TaskDepartments.Remove(taskDepartment);
 
-        //Context.SaveChanges();
+        Context.SaveChanges();
         return true;
     }
 }
