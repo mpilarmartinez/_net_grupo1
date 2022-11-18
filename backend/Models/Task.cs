@@ -27,10 +27,10 @@ public class Task
     [Column("ImportanceTask")]
     public string ImportanceTask { get; set; }
 
-    // asociaciones (pte. si get; set; son necesarios)
-    
-    public List<TaskDepartment> taskdepartments { get; set; }   //OneToMany 
-    /*public Project Project { get; set; }  -> Enrique? */       //ManyToOne 
+
+    // asociaciones 
+    //public List<TaskDepartment> taskdepartments { get; set; }   //OneToMany 
+    //public Project Project { get; set; }                        //ManyToOne 
 
     // constructores
     public Task() { }
@@ -41,25 +41,8 @@ public class Task
     // método tostring
     public override string ToString()
     {
-        return $"Task: {IdTask}, Name:{NameTask}, Date:{DateTask}, StatusTask: {StatusTask}, ImportanceTask: {ImportanceTask}, Taskdepartment: {taskdepartments}"; //faltaria proyect
+        return $"Task: {IdTask}, Name:{NameTask}, Date:{DateTask}, StatusTask: {StatusTask}, ImportanceTask: {ImportanceTask},"; 
     }
 }
 
-//--------------------------------------------------------------------------
-/*
-// atributos
-[Required(ErrorMessage = "Campo obligatorio"),
- Column("title"),
- MinLength(5, ErrorMessage = "Debe ser mayor de 5 caracteres"), 
- MaxLength(50, ErrorMessage = "Debe ser menor de 15 caracteres")]
- public string Title { get; set; }
- [Required, 
- Column("isbn"), 
- MaxLength(50, ErrorMessage = "Debe debe ser menor de 50 caracteres")]
- public string Isbn { get; set; }
- // asociación Many To One
- public Author? Author { get; set; } // opcional
- public int? AuthorId { get; set; } // autor opcional
- // asociación Many To Many con Category
- public IList<Category> Categories { get; set; }
-*/
+
