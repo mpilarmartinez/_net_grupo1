@@ -33,7 +33,8 @@ import { RouterModule } from '@angular/router';
     //router
     RouterModule.forRoot([
       //poner las rutas
-      { path: '', redirectTo: 'bookstaskdepartments', pathMatch: 'full' }, //a la pag principal
+      { path: '', redirectTo: 'poner la principal', pathMatch: 'full' }, //a la pag principal
+
       { path: 'taskdepartments', component: TaskdepartmentListComponent },
       { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent }
       // ruta formulario taskdepartment
