@@ -16,7 +16,7 @@ public class TaskDepartmentDbRepository : ITaskDepartmentRepository
     //Guardar nuevo
     public TaskDepartment CreateDepartment(TaskDepartment taskDepartment)
     {
-        return taskDepartment;
+        //return taskDepartment;
         //si tiene id es update y no se crea
         if (taskDepartment.IdDepartment > 0) // 1
             return UpdateDepartment(taskDepartment);
@@ -33,16 +33,18 @@ public class TaskDepartmentDbRepository : ITaskDepartmentRepository
         if (taskDepartment.IdDepartment == 0)
             return CreateDepartment(taskDepartment);
 
-        TaskDepartment taskDepartmentEntity = FindByIdDepartment(taskDepartment.IdDepartment);
-        //taskDepartmentEntity.Email = taskDepartment.Email;
-        //taskDepartmentEntity.FullName = taskDepartment.FullName;
-        //taskDepartmentEntity.Salary = taskDepartment.Salary;
+        // guardar solo aquellos atributos que interesen
+        Context.TaskDepartments.Attach(taskDepartment);
 
-        Context.TaskDepartments.Update(taskDepartmentEntity);
+        Context.Entry(taskDepartment).Property(b => b.NameDepartment).IsModified = true;
+
 
         Context.SaveChanges();
 
-        return taskDepartmentEntity;
+        Context.TaskDepartments.Update(taskDepartment);
+        Context.SaveChanges();
+
+        return taskDepartment;
         
     }
 
