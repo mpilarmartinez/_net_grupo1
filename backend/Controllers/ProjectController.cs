@@ -17,34 +17,34 @@ public class ProjectController
 
     // métodos
 
-    [HttpGet] // GET api/projects
+    [HttpGet("FindAll")] // GET api/projects
     public List<Project> FindAll()
     {
         return ProjectRepo.FindAll();
     }
 
     
-    [HttpGet("{id}")] // GET api/projects/3
+    [HttpGet("Find{id}")] // GET api/projects/3
     public Project FindByID(int id)
     {
         return ProjectRepo.FindByID(id);
     }
 
-    [HttpPost] // POST api/projects
+    [HttpPost("Create")] // POST api/projects
     public Project Create(Project project)
     {
         var ProjectDB = ProjectRepo.Create(project);
         return ProjectDB;
     }
 
-    [HttpPut] // POST api/projects
+    [HttpPut("Update")] // POST api/projects
     public Project Update(Project project)
     {
         return ProjectRepo.Update(project);
     }
 
     
-    [HttpDelete("{id}")]
+    [HttpDelete("Delete{id}")]
     public void Delete(int id)
     {
         ProjectRepo.Delete(id);
