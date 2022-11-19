@@ -1,4 +1,6 @@
-﻿namespace backend.Db
+﻿using Task = backend.Models.Task;
+
+namespace backend.Db
 {
     public class AppDbContext : DbContext
     {
@@ -6,9 +8,9 @@
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Project> Projects { get; set; }
+
         public DbSet<TaskDepartment> TaskDepartments { get; set; }
-
-
 
         public AppDbContext(DbContextOptions options) : base(options){        }
 

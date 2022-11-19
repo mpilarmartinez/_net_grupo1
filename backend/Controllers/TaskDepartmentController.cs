@@ -17,6 +17,21 @@ public class TaskDepartmentController
     
     // métodos
 
+    // este metodo funciona
+    [HttpPost] // POST api/taskDepartments
+    public TaskDepartment CreateDepartment(TaskDepartment taskDepartment)
+    {
+        var TaskDepartmentDB = TaskDepartmentRepo.CreateDepartment(taskDepartment);
+        return TaskDepartmentDB;
+    }
+
+    //metodos que funcionan
+    [HttpPut] // POST api/taskDepartments
+    public TaskDepartment UpdateDepartment(TaskDepartment taskDepartment)
+    {
+        return TaskDepartmentRepo.UpdateDepartment(taskDepartment);
+    }
+
     //este metodo funciona
     [HttpGet] // GET api/taskDepartments
     public List<TaskDepartment> FindAllDepartment()
@@ -29,19 +44,6 @@ public class TaskDepartmentController
     public TaskDepartment FindByIdDepartment(int id)
     {
         return TaskDepartmentRepo.FindByIdDepartment(id);
-    }
-
-    [HttpPost] // POST api/taskDepartments
-    public TaskDepartment CreateDepartment(TaskDepartment taskDepartment)
-    {
-        var TaskDepartmentDB = TaskDepartmentRepo.CreateDepartment(taskDepartment);
-        return TaskDepartmentDB;
-    }
-
-    [HttpPut] // POST api/taskDepartments
-    public TaskDepartment UpdateDepartment(TaskDepartment taskDepartment)
-    {
-        return TaskDepartmentRepo.UpdateDepartment(taskDepartment);
     }
 
     //este metodo funciona
