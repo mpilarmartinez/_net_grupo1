@@ -11,11 +11,13 @@ import { MatTableModule } from '@angular/material/table';
 //modulo icon de la libreria material
 import { MatIconModule } from '@angular/material/icon';
 import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartment-list.component';
+import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepartment-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskdepartmentListComponent
+    TaskdepartmentListComponent,
+    TaskdepartmentDetailComponent
   ],
   imports: [
     BrowserModule,
