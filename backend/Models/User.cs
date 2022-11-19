@@ -5,8 +5,5 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        //public Task Tasks { get; set; }
-        //public TaskDepartment TaskDep { get; set; }
-        //public Project Projects { get; set; }
     }
 }
