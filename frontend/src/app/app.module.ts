@@ -10,8 +10,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 //modulo icon de la libreria material
 import { MatIconModule } from '@angular/material/icon';
+//auto creado
 import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartment-list.component';
 import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepartment-detail.component';
+//modulo router
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,8 +30,19 @@ import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepar
     MatButtonModule,
     MatTableModule,
     MatIconModule,
+    //router
+    RouterModule.forRoot([
+      //poner las rutas
+      { path: '', redirectTo: 'bookstaskdepartments', pathMatch: 'full' }, //a la pag principal
+      { path: 'taskdepartments', component: TaskdepartmentListComponent },
+      { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent }
+      // ruta formulario taskdepartment
+
+      // ruta editar taskdepartment
 
 
+      //ruta de ...
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
