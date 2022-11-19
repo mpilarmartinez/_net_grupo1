@@ -1,15 +1,16 @@
 ﻿namespace backend.Models;
 
 //nombre de la tabla
-[Table("taskdepartment")]
+[Table("TaskDepartment")]
 
 public class TaskDepartment
 {
     // atributos
-    [Key, Column("ID_DEPARTMENT", Order = 0)]
+    // los nombres de la columna deben palabras enteras sin guiones
+    [Key, Column("IdDepartment", Order = 0)]
     public int IdDepartment { get; set; }
 
-    [Column("NAME_DEPARTMENT", TypeName = "varchar(75)", Order = 2)]
+    [Column("NameDepartment", TypeName = "varchar(75)", Order = 2)]
     public string NameDepartment { get; set; }
 
     //Asociasion Many to One un autor asocia a mas de un libro "TablaId" = Autor columna id
@@ -19,6 +20,6 @@ public class TaskDepartment
     // ToString
     /*public override string ToString()
     {
-        return $"TaskDepartment: {Id}, NameDepartment:{NameDepartment}";
+        return $"TaskDepartment: {IdDepartment}, NameDepartment:{NameDepartment}";
     }*/
 }
