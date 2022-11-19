@@ -10,10 +10,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 //modulo icon de la libreria material
 import { MatIconModule } from '@angular/material/icon';
+import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartment-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaskdepartmentListComponent
   ],
   imports: [
     BrowserModule,
