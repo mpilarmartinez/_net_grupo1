@@ -2,6 +2,7 @@
 
 namespace backend.Controllers;
 
+// [EnableCors("AllowAll")]
 [ApiController]
 [Route("api/taskDepartments")]
 public class TaskDepartmentController
