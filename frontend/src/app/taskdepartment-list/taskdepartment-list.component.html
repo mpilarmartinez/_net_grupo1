@@ -8,18 +8,18 @@
   <mat-icon>add</mat-icon>
 </button>
 
-<!--dataSource muestra la ifno de las columnes-->
+<!--dataSource muestra la info de las columnes-->
 <table mat-table [dataSource]="taskdepatments" class="mat-elevation-z8">
-
-  <ng-container matColumnDef="id">
+  <!--IdDepartment es el mismo de la columna-->
+  <ng-container matColumnDef="IdDepartment">
     <th mat-header-cell *matHeaderCellDef> Identificador (Id) </th>
-    <td mat-cell *matCellDef="let taskdepartment"> {{taskdepartment.idTaskdepartment}} </td>
+    <td mat-cell *matCellDef="let taskdepartment"> {{taskdepartment.IdDepartment}} </td>
   </ng-container>
 
-
-  <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef> Título </th>
-    <td mat-cell *matCellDef="let taskdepartment"> {{taskdepartment.namedepartment}} </td>
+  <!--NameDepartment es el mismo de nombre de la columna-->
+  <ng-container matColumnDef="NameDepartment">
+    <th mat-header-cell *matHeaderCellDef> Nombre de departamento </th>
+    <td mat-cell *matCellDef="let taskdepartment"> {{taskdepartment.NameDepartment}} </td>
   </ng-container>
 
   <ng-container matColumnDef="actions">
