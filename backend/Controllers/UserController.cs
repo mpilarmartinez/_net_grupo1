@@ -17,5 +17,28 @@
             return userRepository.FindAll();
         }
 
+        [HttpGet("{id}")]
+        public User FindById(int id)
+        {
+            return userRepository.FindById(id);
+        }
+
+        [HttpPost]
+        public User Create(User user)
+        {
+            return userRepository.Create(user);
+        }
+
+        [HttpPut]
+        public User Update(User user)
+        {
+            return userRepository.Update(user);
+        }
+
+        [HttpDelete]
+        public void Delete (int id)
+        {
+            userRepository.Remove(id);
+        }
     }
 }
