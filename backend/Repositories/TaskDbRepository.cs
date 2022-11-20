@@ -1,6 +1,5 @@
 ﻿using Task = backend.Models.Task;
 
-
 namespace backend.Repositories
 {
     public class TaskDbRepository : ITaskRepository
@@ -14,7 +13,7 @@ namespace backend.Repositories
             Context = context;
         }
 
-        //metodos
+        // metodos
 
         public Task CreateTask(Task task)
         {

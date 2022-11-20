@@ -15,9 +15,9 @@ builder.Services.AddDbContext<AppDbContext>(
 
 // AÑADIR REPOSITORIOS
 builder.Services.AddScoped<ITaskDepartmentRepository, TaskDepartmentDbRepository>();
-
-
-
+builder.Services.AddScoped<ITaskRepository, TaskDbRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectDbRepository>();
+builder.Services.AddScoped<IUserRepository, UserDbRepository>();
 
 var app = builder.Build();
 
