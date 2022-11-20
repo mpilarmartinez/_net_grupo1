@@ -15,6 +15,7 @@ import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartmen
 import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepartment-detail.component';
 //modulo router
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatTableModule,
     MatIconModule,
+    HttpClientModule,//aqui con angular llega a los controladores
     //router
     RouterModule.forRoot([
       //poner las rutas
