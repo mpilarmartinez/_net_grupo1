@@ -10,6 +10,12 @@ import { TaskdepartmentService } from '../services/taskdepartment.service';
   styleUrls: ['./taskdepartment-list.component.css']
 })
 export class TaskdepartmentListComponent implements OnInit {
+  /*taskdepartments: Taskdepartment[] = [
+    { idDepartment: 1, nameDepartment: 'Angular' },
+    { idDepartment: 2, nameDepartment: 'C Sharp' },
+    { idDepartment: 3, nameDepartment: '.NET' },
+  ];*/
+
   //añadir
   taskdepatments: Taskdepartment[] = [];
 
