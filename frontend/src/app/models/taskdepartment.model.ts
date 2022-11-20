@@ -1,5 +1,5 @@
-//tipo de archivo TypeScript
+//tipo de archivo TypeScript. Debe coincidir con el json
 export interface Taskdepartment {
-  id: number;
-  nametaskdepartment: string;
+  idDepartment: number;
+  nameDepartment: string;
 }
