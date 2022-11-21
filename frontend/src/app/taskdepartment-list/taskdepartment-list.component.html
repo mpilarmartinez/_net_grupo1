@@ -8,6 +8,25 @@
   <mat-icon>add</mat-icon>
 </button>
 
+<div class="card-container">
+  <button class="card card-small" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+    <span>Crear</span>
+  </button>
+
+  <button class="card card-small" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+    <span>Angular Material</span>
+  </button>
+
+  <button class="card card-small" color="red" tabindex="0">
+    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+    <span>Add PWA Support</span>
+  </button>
+
+  <!--(click)="selection.value = 'pwa'"-->
+
+</div>
 <!--dataSource muestra la info de las columnes-->
 <table mat-table [dataSource]="taskdepatments" class="mat-elevation-z8">
   <!--IdDepartment es el mismo de la columna-->
@@ -42,3 +61,5 @@
   <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
   <tr mat-row *matRowDef="let row; columns: columnNames;"></tr>
 </table>
+
+

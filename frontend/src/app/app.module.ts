@@ -10,6 +10,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 //modulo icon de la libreria material
 import { MatIconModule } from '@angular/material/icon';
+//modulo select
+import { MatSelectModule } from '@angular/material/select';
+//modulo card
+import { MatCardModule } from '@angular/material/card';
+
 //auto creado
 import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartment-list.component';
 import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepartment-detail.component';
@@ -32,6 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatIconModule,
     HttpClientModule,//aqui con angular llega a los controladores
+    MatSelectModule,
+    MatCardModule,
     //router
     RouterModule.forRoot([
       //poner las rutas
