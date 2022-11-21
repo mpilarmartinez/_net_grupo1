@@ -57,11 +57,11 @@ import { TaskdepartmentFormComponent } from './taskdepartment-form/taskdepartmen
       { path: '', redirectTo: 'poner la principal', pathMatch: 'full' }, //a la pag principal
 
       { path: 'taskdepartments', component: TaskdepartmentListComponent },
-      { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent }
+      { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent },//es para probar
       // ruta formulario taskdepartment
-
+      { path: 'taskdepartments/new', component: TaskdepartmentFormComponent },
       // ruta editar taskdepartment
-
+      { path: 'taskdepartments/:id/edit', component: TaskdepartmentDetailComponent }
 
       //ruta de ...
     ])
