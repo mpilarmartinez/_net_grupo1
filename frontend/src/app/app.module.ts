@@ -14,19 +14,28 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 //modulo card
 import { MatCardModule } from '@angular/material/card';
+//modulo para detalles
+import { MatDividerModule } from '@angular/material/divider';
+//modulo para formulario
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
-//auto creado
-import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartment-list.component';
-import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepartment-detail.component';
+
+
 //modulo router
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+//auto creado
+import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartment-list.component';
+import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepartment-detail.component';
+import { TaskdepartmentFormComponent } from './taskdepartment-form/taskdepartment-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskdepartmentListComponent,
-    TaskdepartmentDetailComponent
+    TaskdepartmentDetailComponent,
+    TaskdepartmentFormComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +48,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,//aqui con angular llega a los controladores
     MatSelectModule,
     MatCardModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
     //router
     RouterModule.forRoot([
       //poner las rutas
