@@ -17,34 +17,35 @@ public class ProjectController
 
     // métodos
 
-    [HttpGet("FindAll")] // GET api/projects
+    [HttpGet()] // GET api/projects/
     public List<Project> FindAll()
     {
         return ProjectRepo.FindAll();
     }
 
     
-    [HttpGet("Find{id}")] // GET api/projects/3
+    [HttpGet("{id}")] // GET api/projects/3
     public Project FindByID(int id)
     {
         return ProjectRepo.FindByID(id);
     }
 
-    [HttpPost("Create")] // POST api/projects
+    [HttpPost()] // POST api/projects
     public Project Create(Project project)
     {
         var ProjectDB = ProjectRepo.Create(project);
         return ProjectDB;
     }
 
-    [HttpPut("Update")] // POST api/projects
-    public Project Update(Project project)
+    [HttpPut()] // POST api/projects
+    public Project Update(Project project)  // en el ProjectDbRepository comprueba que el ID del
+                                           //  es mayor que cero, sino es cero lo lleva a Create
     {
         return ProjectRepo.Update(project);
     }
 
     
-    [HttpDelete("Delete{id}")]
+    [HttpDelete("{id}")]
     public void Delete(int id)
     {
         ProjectRepo.Delete(id);
