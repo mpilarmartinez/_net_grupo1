@@ -18,34 +18,34 @@ public class TaskController
 
     // métodos
   
-    [HttpGet("FindAll")] // GET api/tasks
+    [HttpGet()] // GET api/tasks
     public List<Task> FindAll()
     {
         return TaskRepo.FindAll();
     }
 
     
-    [HttpGet("Find{id}")] // GET api/tasks
+    [HttpGet("{id}")] // GET api/tasks
     public Task FindByIdTask(int id)
     {
         return TaskRepo.FindByIdTask(id);
     }
 
-    [HttpPost("Create")] // POST api/tasks
+    [HttpPost()] // POST api/tasks
     public Task CreateTask(Task task)
     {
         var TaskDB = TaskRepo.CreateTask(task);
         return TaskDB;
     }
 
-    [HttpPut("Update")] // PUT api/tasks
+    [HttpPut()] // PUT api/tasks
     public Task UpdateTask(Task task)
     {
         return TaskRepo.UpdateTask(task);
     }
 
     
-    [HttpDelete("Remove{id}")] //Delete api/tasks
+    [HttpDelete("{id}")] //Delete api/tasks
     public void RemoveByIdTask(int id)
     {
         TaskRepo.RemoveByIdTask(id);
