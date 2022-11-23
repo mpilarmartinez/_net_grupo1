@@ -29,13 +29,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartment-list.component';
 import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepartment-detail.component';
 import { TaskdepartmentFormComponent } from './taskdepartment-form/taskdepartment-form.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
+import { TaskFormComponent } from './task-form/task-form.component';
+import { ProjectFormComponent } from './project-form/project-form.component';
+import { ProjectEditComponent } from './project-edit/project-edit.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskdepartmentListComponent,
     TaskdepartmentDetailComponent,
-    TaskdepartmentFormComponent
+    TaskdepartmentFormComponent,
+    ProjectListComponent,
+    TaskListComponent,
+    TaskDetailComponent,
+    TaskFormComponent,
+    ProjectFormComponent,
+    ProjectEditComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
