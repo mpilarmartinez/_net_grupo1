@@ -34,8 +34,10 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { ProjectFormComponent } from './project-form/project-form.component';
-import { ProjectEditComponent } from './project-edit/project-edit.component';
+//import { ProjectEditComponent } from './project-edit/project-edit.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +50,10 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
     TaskDetailComponent,
     TaskFormComponent,
     ProjectFormComponent,
-    ProjectEditComponent,
-    ProjectDetailComponent
+    //ProjectEditComponent,
+    ProjectDetailComponent,
+    UserFormComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
