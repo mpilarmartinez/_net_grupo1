@@ -28,17 +28,17 @@
 
 </div>
 <!--dataSource muestra la info de las columnes-->
-<table mat-table [dataSource]="taskdepatments" class="mat-elevation-z8">
-  <!--IdDepartment es el mismo de la columna-->
-  <ng-container matColumnDef="IdDepartment">
+<table mat-table [dataSource]="taskdepartments" class="mat-elevation-z8">
+  <!--idDepartment es el mismo de json-->
+  <ng-container matColumnDef="idDepartment">
     <th mat-header-cell *matHeaderCellDef> Identificador (Id) </th>
-    <td mat-cell *matCellDef="let taskdepartment"> {{taskdepartment.IdDepartment}} </td>
+    <td mat-cell *matCellDef="let taskdepartment"> {{taskdepartment.idDepartment}} </td>
   </ng-container>
 
-  <!--NameDepartment es el mismo de nombre de la columna-->
-  <ng-container matColumnDef="NameDepartment">
+  <!--nameDepartment es el mismo de json-->
+  <ng-container matColumnDef="nameDepartment">
     <th mat-header-cell *matHeaderCellDef> Nombre de departamento </th>
-    <td mat-cell *matCellDef="let taskdepartment"> {{taskdepartment.NameDepartment}} </td>
+    <td mat-cell *matCellDef="let taskdepartment"> {{taskdepartment.nameDepartment}} </td>
   </ng-container>
 
   <ng-container matColumnDef="actions">

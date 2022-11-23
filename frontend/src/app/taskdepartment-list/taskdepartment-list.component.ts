@@ -17,9 +17,9 @@ export class TaskdepartmentListComponent implements OnInit {
   ];*/
 
   //añadir
-  taskdepatments: Taskdepartment[] = [];
-
-  columnNames: string[] = ['IdDepartment', 'NameDepartment'];
+  taskdepartments: Taskdepartment[] = [];
+  //debe coincidir con json
+  columnNames: string[] = ['idDepartment', 'nameDepartment'];
   constructor(private service: TaskdepartmentService) { }
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class TaskdepartmentListComponent implements OnInit {
     this.service.findAllTaskDepartment().subscribe(
       {
         //se ejecuta si va bien
-        next: taskdepatments => this.taskdepatments = taskdepatments,
+        next: taskdepatments => this.taskdepartments = taskdepatments,
         //se ejecuta si va mal
         error: err => console.log(err)
       }
