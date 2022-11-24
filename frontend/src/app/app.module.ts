@@ -71,17 +71,17 @@ import { UserListComponent } from './user-list/user-list.component';
     ReactiveFormsModule,
     //router
     RouterModule.forRoot([
-      //poner las rutas
-      { path: '', redirectTo: 'poner la principal', pathMatch: 'full' }, //a la pag principal
-
+      //HOME
+      { path: '', redirectTo: 'poner la principal', pathMatch: 'full' }, 
+      //Task Department
       { path: 'taskdepartments', component: TaskdepartmentListComponent },
-      { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent },//es para probar
-      // ruta formulario taskdepartment
+      { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent },
       { path: 'taskdepartments/new', component: TaskdepartmentFormComponent },
-      // ruta editar taskdepartment
-      { path: 'taskdepartments/:id/edit', component: TaskdepartmentDetailComponent }
-
-      //ruta de ...
+      { path: 'taskdepartments/:id/edit', component: TaskdepartmentDetailComponent },
+      //User
+      { path: 'users', component: UserListComponent },
+      { path: 'users/new', component: UserFormComponent },
+      { path: 'users/:id/edit', component: UserFormComponent }
     ])
   ],
   providers: [],
