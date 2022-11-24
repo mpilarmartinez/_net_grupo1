@@ -81,7 +81,17 @@ import { UserListComponent } from './user-list/user-list.component';
       //User
       { path: 'users', component: UserListComponent },
       { path: 'users/new', component: UserFormComponent },
-      { path: 'users/:id/edit', component: UserFormComponent }
+      { path: 'users/:id/edit', component: UserFormComponent },
+      //Task
+      { path: 'tasks', component: TaskListComponent },
+      { path: 'tasks/:id/detail', component: TaskDetailComponent },
+      { path: 'tasks/new', component: TaskFormComponent },
+      { path: 'tasks/:id/edit', component: TaskFormComponent },
+      //Project
+      { path: 'projects', component: ProjectListComponent },
+      { path: 'projects/:id/detail', component: ProjectDetailComponent },
+      { path: 'projects/new', component: ProjectFormComponent },
+      { path: 'projects/:id/edit', component: ProjectFormComponent }
     ])
   ],
   providers: [],
