@@ -12,10 +12,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatInputModule } from '@angular/material/input';
 //modulo router
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
 //Componentes creados
 import { TaskdepartmentListComponent } from './taskdepartment-list/taskdepartment-list.component';
 import { TaskdepartmentDetailComponent } from './taskdepartment-detail/taskdepartment-detail.component';
@@ -43,8 +44,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     ProjectFormComponent,
     ProjectDetailComponent,
     UserFormComponent,
-    UserListComponent,
-    UserDetailComponent
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -57,12 +57,14 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatSelectModule,
     MatCardModule,
     MatDividerModule,
+    MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+
     //router
     RouterModule.forRoot([
       //HOME
-      { path: '', redirectTo: 'poner la principal', pathMatch: 'full' }, 
+      { path: '', redirectTo: 'poner la principal', pathMatch: 'full' },
       //Task Department
       { path: 'taskdepartments', component: TaskdepartmentListComponent },
       { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent },
@@ -72,6 +74,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
       { path: 'users', component: UserListComponent },
       { path: 'users/new', component: UserFormComponent },
       { path: 'users/:id/edit', component: UserFormComponent },
+      { path: 'users/:id/detail', component: UserDetailComponent },
       //Task
       { path: 'tasks', component: TaskListComponent },
       { path: 'tasks/:id/detail', component: TaskDetailComponent },

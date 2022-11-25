@@ -26,10 +26,10 @@
     <th mat-header-cell *matHeaderCellDef> Acciones </th>
     <td mat-cell *matCellDef="let user">
 
-      <!--<button mat-raised-button color="primary" [routerLink]="['/authors', author.id, 'detail']">
+      <button mat-raised-button color="primary" [routerLink]="['/users', user.id, 'detail']">
         Ver
         <mat-icon>visibility</mat-icon>
-      </button>-->
+      </button>
 
       <button mat-raised-button color="accent" [routerLink]="['/users', user.id, 'edit']">
         Editar
