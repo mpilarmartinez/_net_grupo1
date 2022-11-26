@@ -11,16 +11,16 @@ export class ProjectListComponent implements OnInit {
 
   projects: Project[] = [];
   // debe coincidir con json
-  columnNames: string[] = ['idProject', 'nameProject', 'statusProject'];
+  columnNames: string[] = ['idProject', 'nameProject', 'statusProject', 'actions'];
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
     //añade método a usar
-    this.findAll();
+    this.findAllProject();
   }
 
-  private findAll() {
+  private findAllProject() {
     //subscribe para ver los resultados
     this.projectService.findAllProject().subscribe(
       {
@@ -30,6 +30,14 @@ export class ProjectListComponent implements OnInit {
         error: err => console.log(err)
       }
     );
+  }
+
+  onDelete(idProject: number) {
+    console.log(idProject);
+    this.projectService.deleteByIdProject(idProject).subscribe({
+      next: response => this.findAllProject(),
+      error: err => console.log(err)
+    });
   }
 
 }
