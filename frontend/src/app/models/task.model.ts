@@ -1,8 +1,8 @@
 export interface Task {  //Typescript. Debe coincidir con json
-  IdTask: number; 
-  NameTask: string;
-  DateTask: Date;
-  StatusTask: string;
-  ImportanceTask: string;
+  idTask: number; 
+  nameTask: string;
+  dateTask: Date;
+  statusTask: string;
+  importanceTask: string;
 }
 

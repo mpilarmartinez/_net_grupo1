@@ -11,7 +11,7 @@ export class TaskListComponent implements OnInit {
 
   tasks: Task[] = [];
   // debe coincidir con json
-  columnNames: string[] = ['IdTask', 'NameTask', 'DateTask', 'StatusTask', 'ImportanceTask'];
+  columnNames: string[] = ['idTask', 'nameTask', 'dateTask', 'statusTask', 'importanceTask'];
 
   constructor(private taskService: TaskService) { }
 

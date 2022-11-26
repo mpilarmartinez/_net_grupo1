@@ -22,25 +22,25 @@ export class TaskFormComponent implements OnInit {
 
   createFormGroup() {
     return new FormGroup({
-      IdTask: new FormControl({ value: null, disabled: true }),
-      NameTask: new FormControl('', { nonNullable: true }),
-      DateTask: new FormControl('', { nonNullable: true }),
-      StatusTask: new FormControl('', { nonNullable: true }),
-      ImportanceTask: new FormControl('', { nonNullable: true }),
+      idTask: new FormControl({ value: null, disabled: true }),
+      nameTask: new FormControl('', { nonNullable: true }),
+      dateTask: new FormControl('', { nonNullable: true }),
+      statusTask: new FormControl('', { nonNullable: true }),
+      importanceTask: new FormControl('', { nonNullable: true }),
     });
   }
 
   save() {
     let task = {
-      NameTask: this.editForm.get("NameTask")?.value,
-      DateTask: this.editForm.get("DateTask")?.value,
-      StatusTask: this.editForm.get("StatusTask")?.value,
-      ImportanceTask: this.editForm.get("ImportanceTask")?.value,
+      nameTask: this.editForm.get("nameTask")?.value,
+      dateTask: this.editForm.get("dateTask")?.value,
+      statusTask: this.editForm.get("statusTask")?.value,
+      importanceTask: this.editForm.get("importanceTask")?.value,
     } as any;
 
     let id = this.editForm.get("id")?.value;
     if (id) {
-      task.IdTask = id;
+      task.idTask = id;
 
       this.taskService.updateTask(task).subscribe({
         next: response => this.navigateToList(),

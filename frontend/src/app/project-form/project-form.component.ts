@@ -21,21 +21,21 @@ export class ProjectFormComponent implements OnInit {
 
   createFormGroup() {
     return new FormGroup({
-      IdProject: new FormControl({ value: null, disabled: true }),
-      NameProject: new FormControl('', { nonNullable: true }),
-      StatusProject: new FormControl('', { nonNullable: true }),
+      idProject: new FormControl({ value: null, disabled: true }),
+      nameProject: new FormControl('', { nonNullable: true }),
+      statusProject: new FormControl('', { nonNullable: true }),
     });
   }
 
   save() {
     let project = {
-      NameProject: this.editForm.get("NameProject")?.value,
-      StatusProject: this.editForm.get("StatusProject")?.value,
+      nameProject: this.editForm.get("nameProject")?.value,
+      statusProject: this.editForm.get("statusProject")?.value,
     } as any;
 
-    let id = this.editForm.get("IdProject")?.value;
+    let id = this.editForm.get("idProject")?.value;
     if (id) {
-      project.IdProject = id;
+      project.idProject = id;
 
       this.projectService.updateProject(project).subscribe({
         next: response => this.navigateToList(),

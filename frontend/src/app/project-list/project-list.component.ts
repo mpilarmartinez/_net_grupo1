@@ -11,7 +11,7 @@ export class ProjectListComponent implements OnInit {
 
   projects: Project[] = [];
   // debe coincidir con json
-  columnNames: string[] = ['IdProject', 'NameProject', 'StatusProject'];
+  columnNames: string[] = ['idProject', 'nameProject', 'statusProject'];
 
   constructor(private projectService: ProjectService) { }
 
