@@ -44,7 +44,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     ProjectFormComponent,
     ProjectDetailComponent,
     UserFormComponent,
-    UserListComponent
+    UserListComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +58,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatSelectModule,
     MatCardModule,
     MatDividerModule,
+    MatCardModule,
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
