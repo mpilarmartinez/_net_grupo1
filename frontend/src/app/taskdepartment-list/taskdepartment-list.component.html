@@ -45,12 +45,12 @@
     <th mat-header-cell *matHeaderCellDef> Acciones </th>
     <td mat-cell *matCellDef="let taskdepartment">
 
-      <button mat-raised-button color="primary" [routerLink]="['/taskdepartments', taskdepartment.id, 'detail']">
+      <button mat-raised-button color="primary" [routerLink]="['/taskdepartments', taskdepartment.idDepartment, 'detail']">
         Ver
         <mat-icon>visibility</mat-icon>
       </button>
 
-      <button mat-raised-button color="accent" [routerLink]="['/taskdepartments', taskdepartment.id, 'edit']">
+      <button mat-raised-button color="accent" [routerLink]="['/taskdepartments', taskdepartment.idDepartment, 'edit']">
         Editar
         <mat-icon>edit</mat-icon>
       </button>
