@@ -16,7 +16,27 @@ export class UserFormComponent implements OnInit {
   constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe({
+      next: pmap => {
+        let id = pmap.get("id");
+        if (id) {
+          this.getUserAndLoadForm(id);
+        }
+      }
+    });
+  }
 
+  getUserAndLoadForm(id: string) {
+    this.userService.findById(Number(id)).subscribe({
+      next: userBackend => {
+        this.editForm.reset({
+          id: { value: userBackend.id, disabled: true },
+          name: userBackend.name,
+          email:userBackend.email
+        } as any);
+      },
+      error:err=>console.log(err)
+    });
   }
 
 

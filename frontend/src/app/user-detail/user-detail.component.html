@@ -1,1 +1,35 @@
-<p>user-detail works!</p>
+<h1>Detalle de un usuario</h1>
+
+<mat-card class="example-card" *ngIf="user">
+  <mat-card-title>{{user.name}}</mat-card-title>
+
+  <div class="custom-margin">
+    <mat-card-content>
+      <p><strong>Id:</strong> {{user.id}}</p>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p><strong>Email:</strong> {{user.email}}</p>
+    </mat-card-content>
+
+  </div>
+
+  <mat-divider inset></mat-divider>
+
+  <mat-card-actions>
+    <button mat-raised-button color="accent" [routerLink]="['/users', user.id, 'edit']">Editar</button>
+    <button mat-raised-button color="warn" (click)="onDelete(user.id)">Borrar</button>
+    <button mat-raised-button routerLink="/users">Volver</button>
+  </mat-card-actions>
+
+  <mat-card-footer>
+    <small></small>
+  </mat-card-footer>
+</mat-card>
+
+<mat-card class="example-card" *ngIf="!user">
+  <mat-card-content>
+    <p>Cargando usuario....</p>
+  </mat-card-content>
+</mat-card>
+
