@@ -1,1 +1,43 @@
-<p>task-detail works!</p>
+<h1>Detalle de una tarea</h1>
+
+<mat-card class="example-card" *ngIf="task">
+  <mat-card-title>{{task.nameTask}}</mat-card-title>
+
+  <div class="custom-margin">
+    <mat-card-content>
+      <p><strong>Id:</strong> {{task.idTask}}</p>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p><strong>Date:</strong> {{task.dateTask}}</p>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p><strong>Status:</strong> {{task.statusTask}}</p>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p><strong>Importance:</strong> {{task.importanceTask}}</p>
+    </mat-card-content>
+
+  </div>
+
+  <mat-divider inset></mat-divider>
+
+  <mat-card-actions>
+    <button mat-raised-button color="accent" [routerLink]="['/tasks', task.idTask, 'edit']">Editar</button>
+    <button mat-raised-button color="warn" (click)="onDelete(task.idTask)">Borrar</button>
+    <button mat-raised-button routerLink="/tasks">Volver</button>
+  </mat-card-actions>
+
+  <mat-card-footer>
+    <small></small>
+  </mat-card-footer>
+</mat-card>
+
+<mat-card class="example-card" *ngIf="!task">
+  <mat-card-content>
+    <p>Cargando usuario....</p>
+  </mat-card-content>
+</mat-card>
+
