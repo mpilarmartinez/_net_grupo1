@@ -17,11 +17,11 @@ export class TaskdepartmentFormComponent implements OnInit {
   constructor(private taskdepartmentService: TaskdepartmentService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
-
+  //idDepartment y nameDepartment es igual al json
   createFormGroupDepartment() {
     return new FormGroup({
-      id: new FormControl({ value: null, disabled: true }),
-      name: new FormControl()
+      idDepartment: new FormControl({ value: null, disabled: true }),
+      nameDepartment: new FormControl()
     });
   }
 
@@ -56,15 +56,15 @@ export class TaskdepartmentFormComponent implements OnInit {
 
   save() {
 
-
+    //nameDepartment igual al json
     let taskdepartment = {
-      name: this.editForm.get("name")?.value
+      nameDepartment: this.editForm.get("nameDepartment")?.value
     } as any;
 
-
-    let id = this.editForm.get("id")?.value;
-    if (id) { // actualización
-      taskdepartment.id = id;
+    //ideDepartment igual al json
+    let idDepartment = this.editForm.get("idDepartment")?.value;
+    if (idDepartment) { // actualización
+      taskdepartment.id = idDepartment;
 
       this.taskdepartmentService.updateTaskDepartment(taskdepartment).subscribe({
         next: response => this.navigateToList(),
