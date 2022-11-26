@@ -36,14 +36,14 @@ export class TaskdepartmentFormComponent implements OnInit {
     });
   }
 
-  private getTaskdepartmentAndLoadInForm(id: string) {
-    this.taskdepartmentService.findByIdTaskDepartment(Number(id)).subscribe(
+  private getTaskdepartmentAndLoadInForm(idDepartment: string) {
+    this.taskdepartmentService.findByIdTaskDepartment(Number(idDepartment)).subscribe(
       {
         next: taskdeparmentFromBackend => {
 
           this.editForm.reset(
             {
-              id: { value: taskdeparmentFromBackend.idDepartment, disabled: true },
+              idDepartment: { value: taskdeparmentFromBackend.idDepartment, disabled: true },
               name: taskdeparmentFromBackend.nameDepartment
 
             } as any);
@@ -64,7 +64,7 @@ export class TaskdepartmentFormComponent implements OnInit {
     //ideDepartment igual al json
     let idDepartment = this.editForm.get("idDepartment")?.value;
     if (idDepartment) { // actualización
-      taskdepartment.id = idDepartment;
+      taskdepartment.idDepartment = idDepartment;
 
       this.taskdepartmentService.updateTaskDepartment(taskdepartment).subscribe({
         next: response => this.navigateToList(),
