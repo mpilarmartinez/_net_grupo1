@@ -19,7 +19,7 @@ export class TaskdepartmentListComponent implements OnInit {
   //añadir
   taskdepartments: Taskdepartment[] = [];
   //debe coincidir con json
-  columnNames: string[] = ['idDepartment', 'nameDepartment'];
+  columnNames: string[] = ['idDepartment', 'nameDepartment', 'actions'];
   constructor(private service: TaskdepartmentService) { }
 
   ngOnInit(): void {
@@ -38,5 +38,12 @@ export class TaskdepartmentListComponent implements OnInit {
       }
     );
   }
-
+  //funciona
+  onDelete(idDepartment: number) {
+    console.log(idDepartment);
+    this.service.deleteByIdTaskdepartment(idDepartment).subscribe({
+      next: response => this.findAllTaskDepartment(),
+      error: err => console.log(err)
+    });
+  }
 }
