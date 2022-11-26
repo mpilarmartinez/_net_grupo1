@@ -69,7 +69,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
       { path: 'taskdepartments', component: TaskdepartmentListComponent },
       { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent },
       { path: 'taskdepartments/new', component: TaskdepartmentFormComponent },
-      { path: 'taskdepartments/:id/edit', component: TaskdepartmentDetailComponent },
+      { path: 'taskdepartments/:id/edit', component: TaskdepartmentFormComponent },
       //User
       { path: 'users', component: UserListComponent },
       { path: 'users/new', component: UserFormComponent },
