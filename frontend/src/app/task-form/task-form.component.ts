@@ -13,15 +13,18 @@ export class TaskFormComponent implements OnInit {
   editForm = this.createFormGroup();
   error: boolean = false;
 
-  constructor(private taskService: TaskService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private taskService: TaskService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
   createFormGroup() {
     return new FormGroup({
       idTask: new FormControl({ value: null, disabled: true }),
-      nameTask: new FormControl(),
-      dateTask: new FormControl(),
-      statusTask: new FormControl(),
-      importanceTask: new FormControl(),//'', { nonNullable: true }
+      nameTask: new FormControl('', { nonNullable: true }),
+      dateTask: new FormControl('', { nonNullable: true }),
+      statusTask: new FormControl('', { nonNullable: true }),
+      importanceTask: new FormControl('', { nonNullable: true })
     });
   }
 
