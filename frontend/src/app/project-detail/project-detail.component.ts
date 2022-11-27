@@ -12,18 +12,21 @@ export class ProjectDetailComponent implements OnInit {
 
   project: Project | undefined;
 
-  constructor(private projectService: ProjectService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(
+    private projectService: ProjectService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe({
       next: pmap => {
         let id = pmap.get("id");
-        this.fetchUser(id);
+        this.fetchProject(id);
       },
       error: err => console.log(err)
     });
   }
-  fetchUser(id: string | null) {
+  fetchProject(id: string | null) {
     this.projectService.findByIdProject(Number(id)).subscribe({
       next: projectBackend => this.project = projectBackend,
       error: err => console.log(err)
