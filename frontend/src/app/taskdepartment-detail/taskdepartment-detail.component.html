@@ -1,1 +1,27 @@
 <h1>taskdepartment-detail works!</h1>
+
+<mat-card class="example-card" *ngIf="taskdepartment">
+  <div class="custom-margin">
+    <mat-card-content>
+      <p><strong>Id:</strong> {{taskdepartment.idDepartment}}</p>
+    </mat-card-content>
+  </div>
+  <mat-card-title>{{taskdepartment.nameDepartment}}</mat-card-title>
+  <mat-divider inset></mat-divider>
+
+  <mat-card-actions>
+    <button mat-raised-button color="accent" [routerLink]="['/taskdepartments', taskdepartment.idDepartment, 'edit']">Editar</button>
+    <button mat-raised-button color="warn" (click)="onDelete(taskdepartment.idDepartment)">Borrar</button>
+    <button mat-raised-button routerLink="/taskdepartments">Volver</button>
+  </mat-card-actions>
+
+  <mat-card-footer>
+    <small></small>
+  </mat-card-footer>
+</mat-card>
+
+<mat-card class="example-card" *ngIf="!taskdepartment">
+  <mat-card-content>
+    <p>Cargando departamento....</p>
+  </mat-card-content>
+</mat-card>
