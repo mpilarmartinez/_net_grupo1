@@ -83,10 +83,8 @@ export class TaskdepartmentFormComponent implements OnInit {
     console.log(err);
     this.error = true;
   }
-
+  //Despues de guardar se vuelve a la lista
   private navigateToList() {
-    this.router.navigate(["/tasdepartments"]);
+    this.router.navigate(["/taskdepartments"]);
   }
-
-
 }
