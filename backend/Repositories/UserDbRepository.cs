@@ -35,6 +35,11 @@
             return context.Users.Find(ID);
         }
 
+        public User FindByPermission(string permission)
+        {
+            return context.Users.Where(per => per.Permissions == permission).First();
+        }
+
         public bool Remove(int id)
         {
             User user = FindById(id);

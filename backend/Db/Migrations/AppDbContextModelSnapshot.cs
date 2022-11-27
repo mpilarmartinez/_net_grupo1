@@ -108,6 +108,11 @@ namespace backend.Db.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("name");
 
+                    b.Property<string>("Permissions")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("permissions");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");

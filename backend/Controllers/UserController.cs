@@ -1,4 +1,6 @@
-﻿namespace backend.Controllers
+﻿using Microsoft.AspNetCore.Cors;
+
+namespace backend.Controllers
 {
     [ApiController]
     [Route("api/users")]
@@ -17,7 +19,7 @@
             return userRepository.FindAll();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public User FindById(int id)
         {
             return userRepository.FindById(id);
@@ -36,9 +38,15 @@
         }
 
         [HttpDelete]
-        public void Delete (int id)
+        public void Delete(int id)
         {
             userRepository.Remove(id);
+        }
+
+        [HttpGet("{permission}")]
+        public User FindByUserPermission(string permission)
+        {
+            return userRepository.FindByPermission(permission);
         }
     }
 }

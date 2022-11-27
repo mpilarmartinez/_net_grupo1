@@ -10,5 +10,8 @@
 
         [Column("email")]
         public string Email { get; set; }
+
+        [Column("permissions")]
+        public string Permissions { get; set; }
     }
 }

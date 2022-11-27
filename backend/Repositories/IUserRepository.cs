@@ -16,5 +16,7 @@
 
         //Eliminar user id
         bool Remove(int id);
+
+        User FindByPermission(string permission);
     }
 }
