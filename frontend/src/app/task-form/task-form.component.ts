@@ -15,19 +15,46 @@ export class TaskFormComponent implements OnInit {
 
   constructor(private taskService: TaskService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
-
-  }
-
-
   createFormGroup() {
     return new FormGroup({
       idTask: new FormControl({ value: null, disabled: true }),
-      nameTask: new FormControl('', { nonNullable: true }),
-      dateTask: new FormControl('', { nonNullable: true }),
-      statusTask: new FormControl('', { nonNullable: true }),
-      importanceTask: new FormControl('', { nonNullable: true }),
+      nameTask: new FormControl(),
+      dateTask: new FormControl(),
+      statusTask: new FormControl(),
+      importanceTask: new FormControl(),//'', { nonNullable: true }
     });
+  }
+
+  ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe({
+      next: pmap => {
+        let id = pmap.get("id");
+        if (id) {
+          this.getTaskAndLoadInForm(id);
+        }
+      }
+    });
+  }
+
+  private getTaskAndLoadInForm(idTask: string) {
+    this.taskService.findByIdTask(Number(idTask)).subscribe(
+      {
+        next: taskFromBackend => {
+
+          this.editForm.reset(
+            {
+              idTask: { value: taskFromBackend.idTask, disabled: true },
+              name: taskFromBackend.nameTask,
+              date: taskFromBackend.dateTask,
+              status: taskFromBackend.statusTask,
+              importance: taskFromBackend.importanceTask
+
+            } as any);
+
+        },
+        error: err => console.log(err)
+      }
+    );
   }
 
   save() {
@@ -38,11 +65,17 @@ export class TaskFormComponent implements OnInit {
       importanceTask: this.editForm.get("importanceTask")?.value,
     } as any;
 
-    let id = this.editForm.get("id")?.value;
-    if (id) {
-      task.idTask = id;
+    //ideDepartment igual al json
+    let idTask = this.editForm.get("idTask")?.value;
+    if (idTask) {// actualizacion
+      task.idTask = idTask;
 
       this.taskService.updateTask(task).subscribe({
+        next: response => this.navigateToList(),
+        error: err => this.showError(err)
+      });
+    } else { // creación
+      this.taskService.createTask(task).subscribe({
         next: response => this.navigateToList(),
         error: err => this.showError(err)
       });
@@ -55,6 +88,6 @@ export class TaskFormComponent implements OnInit {
   }
 
   private navigateToList() {
-    this.router.navigate(["/sers"]);
+    this.router.navigate(["/tasks"]);
   }
 }
