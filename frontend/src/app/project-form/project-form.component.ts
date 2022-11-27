@@ -34,8 +34,8 @@ export class ProjectFormComponent implements OnInit {
     });
   }
 
-  private getProjectAndLoadInForm(idDepartment: string) {
-    this.projectService.findByIdProject(Number(idDepartment)).subscribe(
+  private getProjectAndLoadInForm(idProject: string) {
+    this.projectService.findByIdProject(Number(idProject)).subscribe(
       {
         next: projectFromBackend => {
 
