@@ -15,10 +15,6 @@ export class ProjectFormComponent implements OnInit {
 
   constructor(private projectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
-
-  }
-
   createFormGroup() {
     return new FormGroup({
       idProject: new FormControl({ value: null, disabled: true }),
@@ -27,17 +23,52 @@ export class ProjectFormComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe({
+      next: pmap => {
+        let id = pmap.get("id");
+        if (id) {
+          this.getProjectAndLoadInForm(id);
+        }
+      }
+    });
+  }
+
+  private getProjectAndLoadInForm(idDepartment: string) {
+    this.projectService.findByIdProject(Number(idDepartment)).subscribe(
+      {
+        next: projectFromBackend => {
+
+          this.editForm.reset(
+            {
+              idProject: { value: projectFromBackend.idProject, disabled: true },
+              name: projectFromBackend.nameProject,
+              status: projectFromBackend.statusProject
+
+            } as any);
+
+        },
+        error: err => console.log(err)
+      }
+    );
+  }
+
   save() {
     let project = {
       nameProject: this.editForm.get("nameProject")?.value,
       statusProject: this.editForm.get("statusProject")?.value,
     } as any;
 
-    let id = this.editForm.get("idProject")?.value;
-    if (id) {
-      project.idProject = id;
+    let idProject = this.editForm.get("idProject")?.value;
+    if (idProject) {// actualización
+      project.idProject = idProject;
 
       this.projectService.updateProject(project).subscribe({
+        next: response => this.navigateToList(),
+        error: err => this.showError(err)
+      });
+    } else { // creación
+      this.projectService.createProject(project).subscribe({
         next: response => this.navigateToList(),
         error: err => this.showError(err)
       });
@@ -50,7 +81,7 @@ export class ProjectFormComponent implements OnInit {
   }
 
   private navigateToList() {
-    this.router.navigate(["/sers"]);
+    this.router.navigate(["/projects"]);
   }
 }
 
