@@ -3,6 +3,7 @@ using Task = backend.Models.Task;
 
 namespace backend.Controllers;
 
+[EnableCors("AllowAll")]
 [ApiController]
 [Route("api/tasks")]
 public class TaskController
