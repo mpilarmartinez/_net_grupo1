@@ -29,7 +29,7 @@ export class UserListComponent implements OnInit {
 
   onDelete(id: number) {
     console.log(id);
-    this.userService.delete(id).subscribe({
+    this.userService.deleteById(id).subscribe({
       next: response => this.findAll(),
       error: err => console.log(err)
     });

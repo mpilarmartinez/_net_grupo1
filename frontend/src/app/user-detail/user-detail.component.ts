@@ -23,6 +23,7 @@ export class UserDetailComponent implements OnInit {
       error: err => console.log(err)
     });
   }
+
   fetchUser(id: string | null) {
     this.userService.findById(Number(id)).subscribe({
       next: userBackend => this.user = userBackend,
@@ -32,7 +33,7 @@ export class UserDetailComponent implements OnInit {
 
   onDelete(id: number) {
     console.log(id);
-    this.userService.delete(id).subscribe({
+    this.userService.deleteById(id).subscribe({
       next: response => this.navigateToList(),
       error: err => console.log(err)
     });

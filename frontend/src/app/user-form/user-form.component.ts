@@ -32,10 +32,10 @@ export class UserFormComponent implements OnInit {
         this.editForm.reset({
           id: { value: userBackend.id, disabled: true },
           name: userBackend.name,
-          email:userBackend.email
+          email: userBackend.email
         } as any);
       },
-      error:err=>console.log(err)
+      error: err => console.log(err)
     });
   }
 
@@ -62,6 +62,11 @@ export class UserFormComponent implements OnInit {
         next: response => this.navigateToList(),
         error: err => this.showError(err)
       });
+    } else {
+      this.userService.create(user).subscribe({
+        next: response => this.navigateToList(),
+        error: err => this.showError(err)
+      });
     }
   }
 
@@ -71,6 +76,6 @@ export class UserFormComponent implements OnInit {
   }
 
   private navigateToList() {
-    this.router.navigate(["/sers"]);
+    this.router.navigate(["/users"]);
   }
 }
