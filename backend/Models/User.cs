@@ -12,6 +12,6 @@
         public string Email { get; set; }
 
         [Column("permissions")]
-        public string Permissions { get; set; }
+        public string? Permissions { get; set; }
     }
 }
