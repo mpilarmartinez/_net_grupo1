@@ -42,8 +42,8 @@ export class ProjectFormComponent implements OnInit {
           this.editForm.reset(
             {
               idProject: { value: projectFromBackend.idProject, disabled: true },
-              name: projectFromBackend.nameProject,
-              status: projectFromBackend.statusProject
+              nameProject: projectFromBackend.nameProject,
+              statusProject: projectFromBackend.statusProject
 
             } as any);
 
