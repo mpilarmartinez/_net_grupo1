@@ -44,7 +44,7 @@ export class TaskdepartmentFormComponent implements OnInit {
           this.editForm.reset(
             {
               idDepartment: { value: taskdeparmentFromBackend.idDepartment, disabled: true },
-              name: taskdeparmentFromBackend.nameDepartment
+              nameDepartment: taskdeparmentFromBackend.nameDepartment
 
             } as any);
 
