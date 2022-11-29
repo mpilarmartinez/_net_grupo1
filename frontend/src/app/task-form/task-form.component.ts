@@ -47,10 +47,10 @@ export class TaskFormComponent implements OnInit {
           this.editForm.reset(
             {
               idTask: { value: taskFromBackend.idTask, disabled: true },
-              name: taskFromBackend.nameTask,
-              date: taskFromBackend.dateTask,
-              status: taskFromBackend.statusTask,
-              importance: taskFromBackend.importanceTask
+              nameTask: taskFromBackend.nameTask,
+              dateTask: taskFromBackend.dateTask,
+              statusTask: taskFromBackend.statusTask,
+              importanceTask: taskFromBackend.importanceTask
 
             } as any);
 
