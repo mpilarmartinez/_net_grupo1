@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 //modulo router
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -62,6 +63,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
 
     //router
     RouterModule.forRoot([
