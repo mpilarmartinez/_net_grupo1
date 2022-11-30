@@ -32,3 +32,13 @@ button {
   width: 100%;
   margin-bottom: 10px;
 }
+
+#titulo img {
+  margin-bottom: -80px;
+  margin-top: -120px;
+}
+
+img {
+  max-width: 400px;
+  max-height: 300px;
+}
