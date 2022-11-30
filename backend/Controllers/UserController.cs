@@ -2,6 +2,7 @@
 
 namespace backend.Controllers
 {
+    //[EnableCors("AllowAll")]
     [ApiController]
     [Route("api/users")]
     public class UserController
@@ -37,7 +38,7 @@ namespace backend.Controllers
             return userRepository.Update(user);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public void Delete(int id)
         {
             userRepository.Remove(id);
