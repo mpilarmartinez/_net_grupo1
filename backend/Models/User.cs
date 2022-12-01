@@ -8,6 +8,9 @@
         [Column("name")]
         public string Name { get; set; }
 
+        [Column("contrasenya")]
+        public string Contrasenya { get; set; }
+
         [Column("email")]
         public string Email { get; set; }
 
