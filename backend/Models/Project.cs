@@ -8,21 +8,21 @@ public class Project
 
     // atributos
 
-    [Key, Column("IdProject")]
-    public int IdProject { get; set; }
+    [Key, Column("Id")]
+    public int Id { get; set; }
 
 
-    [Column("NameProject")]
-    public string NameProject { get; set; }
+    [Column("Name")]
+    public string Name { get; set; }
 
 
-    [Column("StatusProject")]
-    public string StatusProject { get; set; }
+    [Column("Status")]
+    public string Status { get; set; }
 
 
     // asociaciones 
-    //public List<Task> tasks { get; set; }   //OneToMany 
-    //public User User { get; set; }    //ManyToOne ??
+    public List<Task> tasks { get; set; }   //OneToMany 
+    
 
     // constructores
     public Project() { }
@@ -33,7 +33,7 @@ public class Project
     // método tostring
     public override string ToString()
     {
-        return $"Project: {IdProject}, Name:{NameProject}, StatusProject: {StatusProject},";
+        return $"Project: {Id}, Name:{Name}, Status: {Status},";
     }
 }
 
