@@ -1,7 +1,7 @@
 <h1>Detalle de un proyecto</h1>
 
 <mat-card class="example-card" *ngIf="project">
-  <mat-card-title>{{project.nameProject}}</mat-card-title>
+  
 
   <div class="custom-margin">
     <mat-card-content>
@@ -9,11 +9,15 @@
     </mat-card-content>
 
     <mat-card-content>
+      <p><strong>Nombre:</strong> {{project.nameProject}}</p>
+    </mat-card-content>
+
+    <mat-card-content>
       <p><strong>Status:</strong> {{project.statusProject}}</p>
     </mat-card-content>
 
   </div>
-
+  
   <mat-divider inset></mat-divider>
 
   <mat-card-actions>
