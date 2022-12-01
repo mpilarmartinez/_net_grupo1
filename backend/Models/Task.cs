@@ -8,29 +8,38 @@ public class Task
     
     // atributos
 
-    [Key, Column("IdTask")]
-    public int IdTask { get; set; }
+    [Key, Column("Id")]
+    public int Id { get; set; }
 
 
-    [Column("NameTask")]
-    public string NameTask { get; set; }
+    [Column("Name")]
+    public string Name { get; set; }
 
 
-    [Column("DateTask")]
-    public DateTime DateTask { get; set; }
+    [Column("Date")]
+    public DateTime Date { get; set; }
 
 
-    [Column("StatusTask")]
-    public string StatusTask { get; set; }
+    [Column("Status")]
+    public string Status { get; set; }
 
 
-    [Column("ImportanceTask")]
-    public string ImportanceTask { get; set; }
+    [Column("Importance")]
+    public string Importance { get; set; }
 
 
     // asociaciones 
-    //public List<TaskDepartment> taskdepartments { get; set; }   //OneToMany 
-    //public Project Project { get; set; }                        //ManyToOne 
+    
+    public Project? Project { get; set; }                        //ManyToOne 
+    public int? ProjectId { get; set; }
+
+    public TaskDepartment? TaskDepartment { get; set; }           //ManyToOne 
+                          
+    public int? TaskDepartmentId { get; set; }
+
+    public User? User { get; set; }                        //ManyToOne 
+                                                                               
+    public int? UserId { get; set; }
 
     // constructores
     public Task() { }
@@ -41,7 +50,7 @@ public class Task
     // método tostring
     public override string ToString()
     {
-        return $"Task: {IdTask}, Name:{NameTask}, Date:{DateTask}, StatusTask: {StatusTask}, ImportanceTask: {ImportanceTask},"; 
+        return $"Task: {Id}, Name:{Name}, Date:{Date}, Status: {Status}, Importance: {Importance},"; 
     }
 }
 
