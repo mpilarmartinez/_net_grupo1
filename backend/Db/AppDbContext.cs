@@ -10,7 +10,7 @@ namespace backend.Db
 
         public DbSet<Project> Projects { get; set; }
 
-        public DbSet<TaskDepartment> TaskDepartments { get; set; }
+        public DbSet<Department> Departments { get; set; }
 
         public AppDbContext(DbContextOptions options) : base(options){        }
 

@@ -1,9 +1,9 @@
 ﻿namespace backend.Models;
 
 //nombre de la tabla
-[Table("TaskDepartment")]
+[Table("Department")]
 
-public class TaskDepartment
+public class Department
 {
     // atributos
     // los nombres de la columna deben palabras enteras sin guiones
@@ -13,7 +13,7 @@ public class TaskDepartment
     [Column("Name", TypeName = "varchar(75)", Order = 2)]
     public string Name { get; set; }
 
-    public List<Task> tasks { get; set; }
+    //public List<Task> tasks { get; set; }
     
     //Asociasion Many to One un autor asocia a mas de un libro "TablaId" = Autor columna id
     //public Autor Autor { get; set; }

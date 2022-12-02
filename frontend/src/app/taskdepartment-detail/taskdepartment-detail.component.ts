@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Taskdepartment } from '../models/taskdepartment.model';
+import { Department } from '../models/department.model';
 import { TaskdepartmentService } from '../services/taskdepartment.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { TaskdepartmentService } from '../services/taskdepartment.service';
 })
 export class TaskdepartmentDetailComponent implements OnInit {
 
-  taskdepartment: Taskdepartment | undefined;
+  taskdepartment: Department | undefined;
 
   constructor(
     private taskdepartmentService: TaskdepartmentService,
@@ -28,7 +28,7 @@ export class TaskdepartmentDetailComponent implements OnInit {
   }
 
   fetchTaskdepartment(id: string | null) {
-    this.taskdepartmentService.findByIdTaskDepartment(Number(id)).subscribe({
+    this.taskdepartmentService.findByIdDepartment(Number(id)).subscribe({
       next: taskdepartmentBackend => this.taskdepartment = taskdepartmentBackend,
       error: err => console.log(err)
     });
@@ -36,14 +36,14 @@ export class TaskdepartmentDetailComponent implements OnInit {
 
   onDelete(id: number) {
     console.log(id);
-    this.taskdepartmentService.deleteByIdTaskdepartment(id).subscribe({
+    this.taskdepartmentService.deleteByIdDepartment(id).subscribe({
       next: response => this.navigateToList(),
       error: err => console.log(err)
     });
   }
   //Despues de eliminar vuelve a la lista
   private navigateToList() {
-    this.router.navigate(["/taskdepartments"]);
+    this.router.navigate(["/departments"]);
   }
 
 }

@@ -5,15 +5,15 @@
 
   <div class="custom-margin">
     <mat-card-content>
-      <p><strong>Id:</strong> {{project.idProject}}</p>
+      <p><strong>Id:</strong> {{project.id}}</p>
     </mat-card-content>
 
     <mat-card-content>
-      <p><strong>Nombre:</strong> {{project.nameProject}}</p>
+      <p><strong>Nombre:</strong> {{project.name}}</p>
     </mat-card-content>
 
     <mat-card-content>
-      <p><strong>Status:</strong> {{project.statusProject}}</p>
+      <p><strong>Status:</strong> {{project.status}}</p>
     </mat-card-content>
 
   </div>
@@ -21,8 +21,8 @@
   <mat-divider inset></mat-divider>
 
   <mat-card-actions>
-    <button mat-raised-button color="accent" [routerLink]="['/projects', project.idProject, 'edit']">Editar</button>
-    <button mat-raised-button color="warn" (click)="onDelete(project.idProject)">Borrar</button>
+    <button mat-raised-button color="accent" [routerLink]="['/projects', project.id, 'edit']">Editar</button>
+    <button mat-raised-button color="warn" (click)="onDelete(project.id)">Borrar</button>
     <button mat-raised-button routerLink="/projects">Volver</button>
   </mat-card-actions>
 

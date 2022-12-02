@@ -69,11 +69,11 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     RouterModule.forRoot([
       //HOME
       { path: '', redirectTo: 'poner la principal', pathMatch: 'full' },
-      //Task Department
-      { path: 'taskdepartments', component: TaskdepartmentListComponent },
-      { path: 'taskdepartments/:id/detail', component: TaskdepartmentDetailComponent },
-      { path: 'taskdepartments/new', component: TaskdepartmentFormComponent },
-      { path: 'taskdepartments/:id/edit', component: TaskdepartmentFormComponent },
+      //Department
+      { path: 'departments', component: TaskdepartmentListComponent },
+      { path: 'departments/:id/detail', component: TaskdepartmentDetailComponent },
+      { path: 'departments/new', component: TaskdepartmentFormComponent },
+      { path: 'departments/:id/edit', component: TaskdepartmentFormComponent },
       //User
       { path: 'users', component: UserListComponent },
       { path: 'users/new', component: UserFormComponent },

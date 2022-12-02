@@ -20,8 +20,8 @@ export class TaskdepartmentFormComponent implements OnInit {
   //idDepartment y nameDepartment es igual al json
   createFormGroupDepartment() {
     return new FormGroup({
-      idDepartment: new FormControl({ value: null, disabled: true }),
-      nameDepartment: new FormControl()
+      id: new FormControl({ value: null, disabled: true }),
+      name: new FormControl()
     });
   }
 
@@ -36,15 +36,15 @@ export class TaskdepartmentFormComponent implements OnInit {
     });
   }
 
-  private getTaskdepartmentAndLoadInForm(idDepartment: string) {
-    this.taskdepartmentService.findByIdTaskDepartment(Number(idDepartment)).subscribe(
+  private getTaskdepartmentAndLoadInForm(id: string) {
+    this.taskdepartmentService.findByIdDepartment(Number(id)).subscribe(
       {
         next: taskdeparmentFromBackend => {
 
           this.editForm.reset(
             {
-              idDepartment: { value: taskdeparmentFromBackend.idDepartment, disabled: true },
-              nameDepartment: taskdeparmentFromBackend.nameDepartment
+              id: { value: taskdeparmentFromBackend.id, disabled: true },
+              name: taskdeparmentFromBackend.name
 
             } as any);
 
@@ -58,21 +58,21 @@ export class TaskdepartmentFormComponent implements OnInit {
 
     //nameDepartment igual al json
     let taskdepartment = {
-      nameDepartment: this.editForm.get("nameDepartment")?.value
+      name: this.editForm.get("name")?.value
     } as any;
 
     //ideDepartment igual al json
-    let idDepartment = this.editForm.get("idDepartment")?.value;
-    if (idDepartment) { // actualización
-      taskdepartment.idDepartment = idDepartment;
+    let id = this.editForm.get("id")?.value;
+    if (id) { // actualización
+      taskdepartment.id = id;
 
-      this.taskdepartmentService.updateTaskDepartment(taskdepartment).subscribe({
+      this.taskdepartmentService.updateDepartment(taskdepartment).subscribe({
         next: response => this.navigateToList(),
         error: err => this.showError(err)
       });
 
     } else { // creación
-      this.taskdepartmentService.createTaskDepartment(taskdepartment).subscribe({
+      this.taskdepartmentService.createDepartment(taskdepartment).subscribe({
         next: response => this.navigateToList(),
         error: err => this.showError(err)
       });
@@ -85,6 +85,6 @@ export class TaskdepartmentFormComponent implements OnInit {
   }
   //Despues de guardar se vuelve a la lista
   private navigateToList() {
-    this.router.navigate(["/taskdepartments"]);
+    this.router.navigate(["/departments"]);
   }
 }

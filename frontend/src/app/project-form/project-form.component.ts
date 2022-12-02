@@ -41,9 +41,9 @@ export class ProjectFormComponent implements OnInit {
 
           this.editForm.reset(
             {
-              idProject: { value: projectFromBackend.idProject, disabled: true },
-              nameProject: projectFromBackend.nameProject,
-              statusProject: projectFromBackend.statusProject
+              id: { value: projectFromBackend.id, disabled: true },
+              name: projectFromBackend.name,
+              status: projectFromBackend.status
 
             } as any);
 
@@ -55,11 +55,11 @@ export class ProjectFormComponent implements OnInit {
 
   save() {
     let project = {
-      nameProject: this.editForm.get("nameProject")?.value,
-      statusProject: this.editForm.get("statusProject")?.value,
+      nameProject: this.editForm.get("name")?.value,
+      statusProject: this.editForm.get("status")?.value,
     } as any;
 
-    let idProject = this.editForm.get("idProject")?.value;
+    let idProject = this.editForm.get("id")?.value;
     if (idProject) {// actualización
       project.idProject = idProject;
 
