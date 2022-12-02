@@ -11,7 +11,7 @@ export class ProjectListComponent implements OnInit {
 
   projects: Project[] = [];
   // debe coincidir con json
-  columnNames: string[] = ['idProject', 'nameProject', 'statusProject', 'actions'];
+  columnNames: string[] = ['id', 'name', 'status', 'actions'];
 
   constructor(private projectService: ProjectService) { }
 
@@ -32,9 +32,9 @@ export class ProjectListComponent implements OnInit {
     );
   }
 
-  onDelete(idProject: number) {
-    console.log(idProject);
-    this.projectService.deleteByIdProject(idProject).subscribe({
+  onDelete(id: number) {
+    console.log(id);
+    this.projectService.deleteByIdProject(id).subscribe({
       next: response => this.findAllProject(),
       error: err => console.log(err)
     });

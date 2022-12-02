@@ -20,11 +20,11 @@ export class TaskFormComponent implements OnInit {
 
   createFormGroup() {
     return new FormGroup({
-      idTask: new FormControl({ value: null, disabled: true }),
-      nameTask: new FormControl('', { nonNullable: true }),
-      dateTask: new FormControl('', { nonNullable: true }),
-      statusTask: new FormControl('', { nonNullable: true }),
-      importanceTask: new FormControl('', { nonNullable: true })
+      id: new FormControl({ value: null, disabled: true }),
+      name: new FormControl('', { nonNullable: true }),
+      date: new FormControl('', { nonNullable: true }),
+      status: new FormControl('', { nonNullable: true }),
+      importance: new FormControl('', { nonNullable: true })
     });
   }
 
@@ -39,18 +39,18 @@ export class TaskFormComponent implements OnInit {
     });
   }
 
-  private getTaskAndLoadInForm(idTask: string) {
-    this.taskService.findByIdTask(Number(idTask)).subscribe(
+  private getTaskAndLoadInForm(id: string) {
+    this.taskService.findByIdTask(Number(id)).subscribe(
       {
         next: taskFromBackend => {
 
           this.editForm.reset(
             {
-              idTask: { value: taskFromBackend.idTask, disabled: true },
-              nameTask: taskFromBackend.nameTask,
-              dateTask: taskFromBackend.dateTask,
-              statusTask: taskFromBackend.statusTask,
-              importanceTask: taskFromBackend.importanceTask
+              id: { value: taskFromBackend.id, disabled: true },
+              name: taskFromBackend.name,
+              date: taskFromBackend.date,
+              status: taskFromBackend.status,
+              importance: taskFromBackend.importance
 
             } as any);
 
@@ -62,16 +62,16 @@ export class TaskFormComponent implements OnInit {
 
   save() {
     let task = {
-      nameTask: this.editForm.get("nameTask")?.value,
-      dateTask: this.editForm.get("dateTask")?.value,
-      statusTask: this.editForm.get("statusTask")?.value,
-      importanceTask: this.editForm.get("importanceTask")?.value,
+      name: this.editForm.get("name")?.value,
+      date: this.editForm.get("date")?.value,
+      status: this.editForm.get("status")?.value,
+      importance: this.editForm.get("importance")?.value,
     } as any;
 
     //ideDepartment igual al json
-    let idTask = this.editForm.get("idTask")?.value;
-    if (idTask) {// actualizacion
-      task.idTask = idTask;
+    let id = this.editForm.get("id")?.value;
+    if (id) {// actualizacion
+      task.id = id;
 
       this.taskService.updateTask(task).subscribe({
         next: response => this.navigateToList(),

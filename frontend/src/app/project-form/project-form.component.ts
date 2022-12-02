@@ -17,9 +17,9 @@ export class ProjectFormComponent implements OnInit {
 
   createFormGroup() {
     return new FormGroup({
-      idProject: new FormControl({ value: null, disabled: true }),
-      nameProject: new FormControl('', { nonNullable: true }),
-      statusProject: new FormControl('', { nonNullable: true }),
+      id: new FormControl({ value: null, disabled: true }),
+      name: new FormControl('', { nonNullable: true }),
+      status: new FormControl('', { nonNullable: true }),
     });
   }
 
@@ -34,8 +34,8 @@ export class ProjectFormComponent implements OnInit {
     });
   }
 
-  private getProjectAndLoadInForm(idProject: string) {
-    this.projectService.findByIdProject(Number(idProject)).subscribe(
+  private getProjectAndLoadInForm(id: string) {
+    this.projectService.findByIdProject(Number(id)).subscribe(
       {
         next: projectFromBackend => {
 
@@ -55,13 +55,13 @@ export class ProjectFormComponent implements OnInit {
 
   save() {
     let project = {
-      nameProject: this.editForm.get("name")?.value,
-      statusProject: this.editForm.get("status")?.value,
+      name: this.editForm.get("name")?.value,
+      status: this.editForm.get("status")?.value,
     } as any;
 
-    let idProject = this.editForm.get("id")?.value;
-    if (idProject) {// actualización
-      project.idProject = idProject;
+    let id = this.editForm.get("id")?.value;
+    if (id) {// actualización
+      project.id = id;
 
       this.projectService.updateProject(project).subscribe({
         next: response => this.navigateToList(),

@@ -11,7 +11,7 @@ export class TaskListComponent implements OnInit {
 
   tasks: Task[] = [];
   // debe coincidir con json
-  columnNames: string[] = ['idTask', 'nameTask', 'dateTask', 'statusTask', 'importanceTask', 'actions'];
+  columnNames: string[] = ['id', 'name', 'date', 'status', 'importance', 'actions'];
 
   constructor(private taskService: TaskService) { }
 
@@ -32,9 +32,9 @@ export class TaskListComponent implements OnInit {
     );
   }
 
-  onDelete(idTask: number) {
-    console.log(idTask);
-    this.taskService.deleteByIdTask(idTask).subscribe({
+  onDelete(id: number) {
+    console.log(id);
+    this.taskService.deleteByIdTask(id).subscribe({
       next: response => this.findAllTask(),
       error: err => console.log(err)
     });
