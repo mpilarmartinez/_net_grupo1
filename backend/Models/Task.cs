@@ -33,9 +33,9 @@ public class Task
     public Project? Project { get; set; }                        //ManyToOne 
     public int? ProjectId { get; set; }
 
-    public TaskDepartment? TaskDepartment { get; set; }           //ManyToOne 
+    public Department? Department { get; set; }           //ManyToOne 
                           
-    public int? TaskDepartmentId { get; set; }
+    public int? DepartmentId { get; set; }
 
     public User? User { get; set; }                        //ManyToOne 
                                                                                
