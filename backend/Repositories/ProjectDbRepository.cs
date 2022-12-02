@@ -16,7 +16,7 @@
 
         public Project Create(Project project)
         {
-            if (project.IdProject > 0)
+            if (project.Id > 0)
             {
                 return Update(project);
             }
@@ -52,14 +52,14 @@
 
         public Project Update(Project project)
         {
-            if (project.IdProject == 0)
+            if (project.Id == 0)
             {
                 return Create(project);
             }
 
-            Project projectrepo = FindByID(project.IdProject);
-            projectrepo.NameProject = project.NameProject;
-            projectrepo.StatusProject = project.StatusProject;
+            Project projectrepo = FindByID(project.Id);
+            projectrepo.Name = project.Name;
+            projectrepo.Status = project.Status;
            
 
             Context.Projects.Update(projectrepo);

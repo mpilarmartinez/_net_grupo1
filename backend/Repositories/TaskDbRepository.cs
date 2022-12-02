@@ -17,7 +17,7 @@ namespace backend.Repositories
 
         public Task CreateTask(Task task)
         {
-            if (task.IdTask > 0)
+            if (task.Id > 0)
             {
                 return UpdateTask(task);
             }
@@ -53,16 +53,16 @@ namespace backend.Repositories
 
         public Task UpdateTask(Task task)
         {
-            if (task.IdTask == 0)
+            if (task.Id == 0)
             {
                 return CreateTask(task);
             }
 
-            Task taskrepo = FindByIdTask(task.IdTask);
-            taskrepo.NameTask = task.NameTask;
-            taskrepo.DateTask = task.DateTask;
-            taskrepo.StatusTask = task.StatusTask;
-            taskrepo.ImportanceTask = task.ImportanceTask;
+            Task taskrepo = FindByIdTask(task.Id);
+            taskrepo.Name = task.Name;
+            taskrepo.Date = task.Date;
+            taskrepo.Status = task.Status;
+            taskrepo.Importance = task.Importance;
 
             Context.Tasks.Update(taskrepo);
             Context.SaveChanges();
