@@ -3,11 +3,15 @@
 <mat-card class="example-card" *ngIf="taskdepartment">
   <div class="custom-margin">
     <mat-card-content>
-      <p><strong>Id:</strong> {{taskdepartment.id}}</p>
+      <p><strong>Id: </strong> {{taskdepartment.id}}</p>
     </mat-card-content>
+
+    <mat-card-content>
+      <p><strong>Name: </strong>{{taskdepartment.name}}</p>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+
   </div>
-  <mat-card-title>{{taskdepartment.name}}</mat-card-title>
-  <mat-divider inset></mat-divider>
 
   <mat-card-actions>
     <button mat-raised-button color="accent" [routerLink]="['/departments', taskdepartment.id, 'edit']">Editar</button>
