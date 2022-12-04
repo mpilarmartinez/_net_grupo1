@@ -21,8 +21,9 @@ public class Project
 
 
     // asociaciones 
-    public List<Task> tasks { get; set; }   //OneToMany 
-    
+    public List<Task>? tasks { get; set; }   //OneToMany 
+    //public ICollection<Task>? tasks { get; set; }   //OneToMany 
+
 
     // constructores
     public Project() { }
