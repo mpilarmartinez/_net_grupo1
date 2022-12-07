@@ -3,6 +3,6 @@ export interface Project {  //Typescript. Debe coincidir con json
   name: string;
   status: string;
 
-  //asociaciones
+  //asociaciones OnetoMany
   tasks?: any[];
 }
