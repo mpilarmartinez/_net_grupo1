@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-
+  user: User | undefined;
   editForm = this.createFormGroup();
   error: boolean = false;
 
@@ -21,8 +22,16 @@ export class UserFormComponent implements OnInit {
         let id = pmap.get("id");
         if (id) {
           this.getUserAndLoadForm(id);
+          this.fetchUser(id);
         }
       }
+    });
+  }
+
+  fetchUser(id: string|null) {
+    this.userService.findById(Number(id)).subscribe({
+      next: userBackend => this.user = userBackend,
+      error: err => console.log(err)
     });
   }
 

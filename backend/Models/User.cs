@@ -16,5 +16,12 @@
 
         [Column("permissions")]
         public string? Permissions { get; set; }
+
+        public User() { }
+
+        public override string ToString()
+        {
+            return $"User:{Id}, Name: {Name}, Password: {Contrasenya}, Email: {Email}, Permissions: {Permissions}";
+        }
     }
 }

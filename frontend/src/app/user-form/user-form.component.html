@@ -1,4 +1,6 @@
-<h2>Crear nuevo usuario</h2>
+<h2 *ngIf="!user">Crear nuevo usuario</h2>
+<h2 *ngIf="user">Editar usuario</h2>
+<!--<h2>Crear nuevo usuario</h2>-->
 
 <mat-card class="example-card" *ngIf="error">
   Se ha producido un error, Inténtalo de nuevo más tarde.
