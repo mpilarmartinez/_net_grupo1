@@ -2,4 +2,7 @@
 export interface Department {
   id: number;
   name: string;
+
+  //asociacion OneToMany
+  //tasks?: any[];          Yessid-> ¿¿esta bien??
 }

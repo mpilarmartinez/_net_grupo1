@@ -5,9 +5,15 @@ export interface Task {  //Typescript. Debe coincidir con json
   status: string;
   importance: string;
 
-  //asociaciones
+  //asociaciones ManyToOne
+
+  project?: any;
   projectId?: number;
+
+  department?: any;
   departmentId?: number;
+
+  user?: any;
   userId?: number;
-}
+} 
 
