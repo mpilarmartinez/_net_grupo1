@@ -20,6 +20,16 @@
     <input matInput formControlName="status">
   </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Selector de tareas</mat-label>
+    <mat-select formControlName="tasks" multiple>
+      <mat-option *ngFor="let task of tasks" [value]="task">
+        {{task.id}} {{task.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
   <button mat-raised-button color="primary" type="submit">Guardar</button>
   <button mat-raised-button color="warn" routerLink="/projects">Cancelar</button>
 </form>
