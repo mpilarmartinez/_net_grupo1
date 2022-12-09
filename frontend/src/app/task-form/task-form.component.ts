@@ -5,6 +5,7 @@ import { TaskService } from '../services/task.service';
 import { ProjectService } from '../services/project.service';
 import { UserService } from '../services/user.service';
 import { TaskdepartmentService } from '../services/taskdepartment.service';
+import { Task } from '../models/task.model';
 
 @Component({
   selector: 'app-task-form',
@@ -12,7 +13,7 @@ import { TaskdepartmentService } from '../services/taskdepartment.service';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
-
+  task: Task | undefined;
   editForm = this.createFormGroup();
   error: boolean = false;
 
@@ -43,10 +44,19 @@ export class TaskFormComponent implements OnInit {
         let id = pmap.get("id");
         if (id) {
           this.getTaskAndLoadInForm(id);
+          this.fetchTask(id);
         }
       }
     });
   }
+
+  fetchTask(id: string | null) {
+    this.taskService.findByIdTask(Number(id)).subscribe({
+      next: taskBackend => this.task = taskBackend,
+      error: err => console.log(err)
+    });
+  }
+
 
   private getTaskAndLoadInForm(id: string) {
     this.taskService.findByIdTask(Number(id)).subscribe(
