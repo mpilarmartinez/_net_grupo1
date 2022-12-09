@@ -20,15 +20,10 @@
     <input matInput formControlName="status">
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Selector de tareas</mat-label>
-    <mat-select formControlName="tasks" multiple>
-      <mat-option *ngFor="let task of tasks" [value]="task">
-        {{task.id}} {{task.name}}
-      </mat-option>
-    </mat-select>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Tarea</mat-label>
+    <input matInput formControlName="task">
   </mat-form-field>
-
 
   <br />
   <button mat-raised-button color="primary" type="submit">Guardar</button>

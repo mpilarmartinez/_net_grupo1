@@ -2,18 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from '../models/project.model';
 import { ProjectService } from '../services/project.service';
+import { Task } from '../models/task.model';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.css']
 })
+
 export class ProjectDetailComponent implements OnInit {
 
   project: Project | undefined;
 
   constructor(
     private projectService: ProjectService,
+    private taskService: TaskService,
     private activatedRoute: ActivatedRoute,
     private router: Router) { }
 
@@ -45,3 +49,7 @@ export class ProjectDetailComponent implements OnInit {
     this.router.navigate(["/projects"]);
   }
 }
+
+
+
+
