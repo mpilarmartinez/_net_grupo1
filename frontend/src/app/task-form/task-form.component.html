@@ -15,7 +15,7 @@
     <input matInput formControlName="name">
   </mat-form-field>
 
-  
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Fecha</mat-label>
     <input matInput formControlName="date">
@@ -30,6 +30,22 @@
     <mat-label>Importance</mat-label>
     <input matInput formControlName="importance">
   </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Project</mat-label>
+    <input matInput formControlName="project.id">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>User</mat-label>
+    <input matInput formControlName="user.id">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Department</mat-label>
+    <input matInput formControlName="department.id">
+  </mat-form-field>
+
 
   <button mat-raised-button color="primary" type="submit">Guardar</button>
   <button mat-raised-button color="warn" routerLink="/tasks">Cancelar</button>

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from '../services/task.service';
+import { ProjectService } from '../services/project.service';
+import { UserService } from '../services/user.service';
+import { TaskdepartmentService } from '../services/taskdepartment.service';
 
 @Component({
   selector: 'app-task-form',
@@ -15,6 +18,9 @@ export class TaskFormComponent implements OnInit {
 
   constructor(
     private taskService: TaskService,
+    private projectService: ProjectService,  //asociacion Project
+    private userService: UserService,  //asociacion User
+    private taskdepartmentService: TaskdepartmentService,  //asociacion Department
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
@@ -24,7 +30,10 @@ export class TaskFormComponent implements OnInit {
       name: new FormControl('', { nonNullable: true }),
       date: new FormControl('', { nonNullable: true }),
       status: new FormControl('', { nonNullable: true }),
-      importance: new FormControl('', { nonNullable: true })
+      importance: new FormControl('', { nonNullable: true }),
+      project: new FormControl('', { nonNullable: true }),   //asociacion project
+      user: new FormControl('', { nonNullable: true }),   //asociacion user
+      taskdepartment: new FormControl('', { nonNullable: true })   //asociacion department
     });
   }
 
@@ -50,8 +59,10 @@ export class TaskFormComponent implements OnInit {
               name: taskFromBackend.name,
               date: taskFromBackend.date,
               status: taskFromBackend.status,
-              importance: taskFromBackend.importance
-
+              importance: taskFromBackend.importance,
+              project: taskFromBackend.project,     //asociacion project
+              user: taskFromBackend.user,    //asociacion user
+              taskdepartment: taskFromBackend.department    //asociacion user
             } as any);
 
         },
@@ -66,6 +77,9 @@ export class TaskFormComponent implements OnInit {
       date: this.editForm.get("date")?.value,
       status: this.editForm.get("status")?.value,
       importance: this.editForm.get("importance")?.value,
+      project: this.editForm.get("project")?.value,           //asociacion project
+      user: this.editForm.get("user")?.value,                 //asociacion user
+      taskdepartment: this.editForm.get("taskdepartment")?.value,    //asociacion department
     } as any;
 
     //ideDepartment igual al json

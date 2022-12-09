@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../models/task.model';
 import { TaskService } from '../services/task.service';
+import { ProjectService } from '../services/project.service';
+import { UserService } from '../services/user.service';
+import { TaskdepartmentService } from '../services/taskdepartment.service';
+
 
 @Component({
   selector: 'app-task-list',
@@ -11,7 +15,7 @@ export class TaskListComponent implements OnInit {
 
   tasks: Task[] = [];
   // debe coincidir con json
-  columnNames: string[] = ['id', 'name', 'date', 'status', 'importance', 'actions'];
+  columnNames: string[] = ['id', 'name', 'date', 'status', 'importance', 'project', 'user', 'taskdepartment', 'actions'];
 
   constructor(private taskService: TaskService) { }
 
@@ -39,8 +43,6 @@ export class TaskListComponent implements OnInit {
       error: err => console.log(err)
     });
   }
-
-
 
 }
 
