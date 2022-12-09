@@ -42,7 +42,7 @@ export class ProjectFormComponent implements OnInit {
         }
       }
     });
-    // cargar categories
+    // cargar tareas
     this.taskService.findAllTask().subscribe({
       next: tasks => this.tasks = tasks,
       error: err => console.log(err)
@@ -83,6 +83,8 @@ export class ProjectFormComponent implements OnInit {
         next: response => this.navigateToList(),
         error: err => this.showError(err)
       });
+
+
     } else { // creación
       this.projectService.createProject(project).subscribe({
         next: response => this.navigateToList(),
