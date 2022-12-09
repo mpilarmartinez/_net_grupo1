@@ -14,7 +14,7 @@ import { Task } from '../models/task.model';
 })
 
 export class ProjectFormComponent implements OnInit {
-
+  project: Project | undefined;
   editForm = this.createFormGroup();
   error: boolean = false;
   tasks: Task[] = [];
@@ -39,6 +39,7 @@ export class ProjectFormComponent implements OnInit {
 
         if (id) {
           this.getProjectAndLoadInForm(id);
+          this.fetchProject(id);
         }
       }
     });
@@ -48,6 +49,13 @@ export class ProjectFormComponent implements OnInit {
       error: err => console.log(err)
     });
 
+  }
+
+  fetchProject(id: string | null) {
+    this.projectService.findByIdProject(Number(id)).subscribe({
+      next: projectBackend => this.project = projectBackend,
+      error: err => console.log(err)
+    });
   }
 
   private getProjectAndLoadInForm(id: string) {
