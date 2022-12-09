@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskdepartmentService } from '../services/taskdepartment.service';
+import { Department } from '../models/department.model';
+
 
 @Component({
   selector: 'app-taskdepartment-form',
@@ -10,7 +12,7 @@ import { TaskdepartmentService } from '../services/taskdepartment.service';
   styleUrls: ['./taskdepartment-form.component.css']
 })
 export class TaskdepartmentFormComponent implements OnInit {
-
+  department: Department | undefined;
   editForm = this.createFormGroupDepartment(); // formulario
   error: boolean = false;
 
@@ -31,10 +33,19 @@ export class TaskdepartmentFormComponent implements OnInit {
         let id = pmap.get("id");
         if (id) {
           this.getTaskdepartmentAndLoadInForm(id);
+          this.fetchtaskdepartment(id);
         }
       }
     });
   }
+
+  fetchtaskdepartment(id: string | null) {
+    this.taskdepartmentService.findByIdDepartment(Number(id)).subscribe({
+      next: taskdepartmentBackend => this.department = taskdepartmentBackend,
+      error: err => console.log(err)
+    });
+  }
+
 
   private getTaskdepartmentAndLoadInForm(id: string) {
     this.taskdepartmentService.findByIdDepartment(Number(id)).subscribe(
