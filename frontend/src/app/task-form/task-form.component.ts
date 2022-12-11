@@ -34,7 +34,7 @@ export class TaskFormComponent implements OnInit {
       importance: new FormControl('', { nonNullable: true }),
       project: new FormControl('', { nonNullable: true }),   //asociacion project
       user: new FormControl('', { nonNullable: true }),   //asociacion user
-      taskdepartment: new FormControl('', { nonNullable: true })   //asociacion department
+      department: new FormControl('', { nonNullable: true })   //asociacion department
     });
   }
 
@@ -72,7 +72,7 @@ export class TaskFormComponent implements OnInit {
               importance: taskFromBackend.importance,
               project: taskFromBackend.project,     //asociacion project
               user: taskFromBackend.user,    //asociacion user
-              taskdepartment: taskFromBackend.department    //asociacion user
+              department: taskFromBackend.department    //asociacion user
             } as any);
 
         },
@@ -89,7 +89,7 @@ export class TaskFormComponent implements OnInit {
       importance: this.editForm.get("importance")?.value,
       project: this.editForm.get("project")?.value,           //asociacion project
       user: this.editForm.get("user")?.value,                 //asociacion user
-      taskdepartment: this.editForm.get("taskdepartment")?.value,    //asociacion department
+      department: this.editForm.get("department")?.value,    //asociacion department
     } as any;
 
     //ideDepartment igual al json
