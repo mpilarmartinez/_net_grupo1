@@ -1,4 +1,4 @@
-﻿namespace backend.Models;
+﻿ namespace backend.Models;
 
 //nombre de la tabla
 [Table("Project")]
@@ -11,17 +11,18 @@ public class Project
     [Key, Column("Id")]
     public int Id { get; set; }
 
-
     [Column("Name")]
     public string Name { get; set; }
-
 
     [Column("Status")]
     public string Status { get; set; }
 
+    [Column("Task_project")]
+    public string Task_project { get; set; }
+
 
     // asociaciones 
-    public List<Task>? tasks { get; set; }   //OneToMany 
+    //public List<Task>? tasks { get; set; }   //OneToMany 
     //public ICollection<Task>? tasks { get; set; }   //OneToMany 
 
 
