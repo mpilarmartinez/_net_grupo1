@@ -1,3 +1,4 @@
+import { NonNullAssert } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,6 +14,7 @@ export class UserFormComponent implements OnInit {
   user: User | undefined;
   editForm = this.createFormGroup();
   error: boolean = false;
+  users: User[] = [];
 
   constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -26,9 +28,14 @@ export class UserFormComponent implements OnInit {
         }
       }
     });
+
+    this.userService.findAll().subscribe({
+      next: users => this.users = users,
+      error: err => console.log(err)
+    });
   }
 
-  fetchUser(id: string|null) {
+  fetchUser(id: string | null) {
     this.userService.findById(Number(id)).subscribe({
       next: userBackend => this.user = userBackend,
       error: err => console.log(err)
@@ -41,7 +48,8 @@ export class UserFormComponent implements OnInit {
         this.editForm.reset({
           id: { value: userBackend.id, disabled: true },
           name: userBackend.name,
-          email: userBackend.email
+          email: userBackend.email,
+          permissions: userBackend.permissions
         } as any);
       },
       error: err => console.log(err)
@@ -53,14 +61,16 @@ export class UserFormComponent implements OnInit {
     return new FormGroup({
       id: new FormControl({ value: null, disabled: true }),
       name: new FormControl('', { nonNullable: true }),
-      email: new FormControl('', { nonNullable: true })
+      email: new FormControl('', { nonNullable: true }),
+      permissions: new FormControl('', { nonNullable: true })
     });
   }
 
   save() {
     let user = {
       name: this.editForm.get("name")?.value,
-      email: this.editForm.get("email")?.value
+      email: this.editForm.get("email")?.value,
+      permissions: this.editForm.get("permissions")?.value
     } as any;
 
     let id = this.editForm.get("id")?.value;
