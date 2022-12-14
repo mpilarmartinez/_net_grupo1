@@ -30,16 +30,16 @@ public class Task
 
     // asociaciones 
     
-    public Project? Project { get; set; }                        //ManyToOne 
-    public int? ProjectId { get; set; }
+    //public Project? Project { get; set; }                        //ManyToOne 
+    //public int? ProjectId { get; set; }
 
-    public Department? Department { get; set; }           //ManyToOne 
+    //public Department? Department { get; set; }           //ManyToOne 
                           
-    public int? DepartmentId { get; set; }
+    //public int? DepartmentId { get; set; }
 
-    public User? User { get; set; }                        //ManyToOne 
+    //public User? User { get; set; }                        //ManyToOne 
                                                                                
-    public int? UserId { get; set; }
+    //public int? UserId { get; set; }
 
     // constructores
     public Task() { }

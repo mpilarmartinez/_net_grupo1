@@ -1,4 +1,6 @@
-﻿namespace backend.Repositories;
+﻿using Task = backend.Models.Task;
+
+namespace backend.Repositories;
 
 public interface IDepartmentRepository
 {
@@ -16,4 +18,7 @@ public interface IDepartmentRepository
 
     //Eliminar por id
     bool RemoveByIdDepartment(int id);
+    //asociacion
+    List<Department> FindByTaskId(int id);
+    Department FindByIdWithInclude(int id);
 }
