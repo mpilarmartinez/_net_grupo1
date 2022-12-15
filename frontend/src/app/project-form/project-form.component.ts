@@ -67,7 +67,7 @@ export class ProjectFormComponent implements OnInit {
               id: { value: projectFromBackend.id, disabled: true },
               name: projectFromBackend.name,
               status: projectFromBackend.status,
-              task_project: projectFromBackend.task_project       
+              //task_project: projectFromBackend.task_project       
 
             } as any);
 
@@ -81,7 +81,7 @@ export class ProjectFormComponent implements OnInit {
     let project = {
       name: this.editForm.get("name")?.value,
       status: this.editForm.get("status")?.value,
-      task_project: this.editForm.get("task_project")?.value,    
+      //task_project: this.editForm.get("task_project")?.value,    
     } as any;
 
     let id = this.editForm.get("id")?.value;

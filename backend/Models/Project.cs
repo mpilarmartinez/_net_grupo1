@@ -17,8 +17,8 @@ public class Project
     [Column("Status")]
     public string Status { get; set; }
 
-    [Column("Task_project")]
-    public string Task_project { get; set; }
+    /*[Column("Task_project")]
+    public string Task_project { get; set; }*/
 
 
     // asociaciones 

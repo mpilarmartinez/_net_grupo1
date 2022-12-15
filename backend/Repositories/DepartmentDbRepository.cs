@@ -36,11 +36,11 @@ public class DepartmentDbRepository : IDepartmentRepository
         if (department.Id == 0)
             return CreateDepartment(department);
 
-        Department departmentDb = FindByIdWithInclude(department.Id);
+        //Department departmentDb = FindByIdWithInclude(department.Id);
         if (department == null)
             throw new Exception("Department not found");
-        departmentDb.Name = department.Name;
-        departmentDb.TaskId = department.TaskId;
+        //departmentDb.Name = department.Name;
+        //departmentDb.TaskId = department.TaskId;
 
         // guardar solo aquellos atributos que interesen
         Context.Departments.Attach(department);
@@ -72,7 +72,7 @@ public class DepartmentDbRepository : IDepartmentRepository
     public bool RemoveByIdDepartment(int id)
     {
 
-        Department department = FindByIdDepartment(id);
+       Department department = FindByIdDepartment(id);
         if (department == null)
             return false;
 
@@ -82,18 +82,18 @@ public class DepartmentDbRepository : IDepartmentRepository
         return true;
     }
 
-    public Department FindByIdWithInclude(int id)
+   /* public Department FindByIdWithInclude(int id)
     {
         return Context.Departments
             .Include(department => department.Task)
             .Where(department => department.Id == id)
             .FirstOrDefault();
-    }
+    }*/
     //asociacion
-    public List<Department> FindByTaskId(int id)
+    /*public List<Department> FindByTaskId(int id)
     {
         return Context.Departments
            .Where(department => department.TaskId == id)
            .ToList();
-    }
+    }*/
 }
