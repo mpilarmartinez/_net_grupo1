@@ -18,5 +18,8 @@
         bool Remove(int id);
 
         User FindByPermission(string permission);
+        User FindEmailPasswordLogin(string email, string password);
+        //User FindByEmail(string email);
+        //User FindByPassword(string password);
     }
 }

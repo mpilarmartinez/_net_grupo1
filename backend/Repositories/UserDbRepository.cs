@@ -30,6 +30,17 @@
             return context.Users.ToList();
         }
 
+        public User FindEmailPasswordLogin(string email, string password)
+        {
+
+            return context.Users.Where(x => x.Email == email && x.Contrasenya == password).FirstOrDefault();
+        }
+
+        public User FindByPassword(string password)
+        {
+            return context.Users.Where(x => x.Contrasenya == password).First();
+        }
+
         public User FindById(int ID)
         {
             return context.Users.Find(ID);
