@@ -16,6 +16,8 @@
 
         //Eliminar un proyecto por ID
         bool Delete(int id);
+        //asociacion
+        List<Department> FindByTaskId(int id);
     }
 }
 

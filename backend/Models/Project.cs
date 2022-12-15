@@ -17,12 +17,13 @@ public class Project
     [Column("Status")]
     public string Status { get; set; }
 
-    [Column("Task_project")]
-    public string Task_project { get; set; }
+    /*[Column("Task_project")]
+    public string Task_project { get; set; }*/
 
 
     // asociaciones 
-    //public List<Task>? tasks { get; set; }   //OneToMany 
+    public Task? Task { get; set; }  //OneToMany
+    public int? TaskId { get; set; }
     //public ICollection<Task>? tasks { get; set; }   //OneToMany 
 
 

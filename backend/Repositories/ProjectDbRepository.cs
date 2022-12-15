@@ -32,9 +32,9 @@ namespace backend.Repositories
             return project;
         }
 
-        public Project FindByID(int ID)
+        public Project FindByID(int id)
         {
-            return Context.Projects.Find(ID);
+            return Context.Projects.Find(id);
         }
 
         public List<Project> FindAll()
@@ -65,13 +65,22 @@ namespace backend.Repositories
             Project projectrepo = FindByID(project.Id);
             projectrepo.Name = project.Name;
             projectrepo.Status = project.Status;
-            projectrepo.Task_project = project.Task_project;
+            projectrepo.TaskId = project.TaskId;
+            //projectrepo.Task_project = project.Task_project;
 
             Context.Projects.Update(projectrepo);
             Context.SaveChanges();
 
             return projectrepo;
 
+        }
+
+        //asociacion
+        public List<Department> FindByTaskId(int id)
+        {
+            return Context.Departments
+               .Where(department => department.TaskId == id)
+               .ToList();
         }
 
     }
