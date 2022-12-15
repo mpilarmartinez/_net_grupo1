@@ -7,13 +7,13 @@ export interface Task {  //Typescript. Debe coincidir con json
 
   //asociaciones ManyToOne
 
-  project?: any;
+  /*project?: any;
   projectId?: number;
 
   department?: any;
   departmentId?: number;
 
   user?: any;
-  userId?: number;
+  userId?: number;*/
 } 
 
