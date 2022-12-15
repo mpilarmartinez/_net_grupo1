@@ -24,6 +24,12 @@ public class Project
     // asociaciones 
     public Task? Task { get; set; }  //OneToMany
     public int? TaskId { get; set; }
+
+    public User? User { get; set; }                        //ManyToOne 
+    public int? UserId { get; set; }
+
+    public Department? Department { get; set; }           //ManyToOne 
+    public int? DepartmentId { get; set; }
     //public ICollection<Task>? tasks { get; set; }   //OneToMany 
 
 

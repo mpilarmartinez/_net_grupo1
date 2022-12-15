@@ -54,7 +54,7 @@ public class DepartmentController
         DepartmentRepo.RemoveByIdDepartment(id);
     }
 
-    [HttpGet("include/{id}")] // GET api/books/include/3
+    /*[HttpGet("include/{id}")] // GET api/books/include/3
     public Department FindByIdWithInclude(int id)
     {
         return DepartmentRepo.FindByIdWithInclude(id);
@@ -64,5 +64,5 @@ public class DepartmentController
     public List<Department> FindByTaskId(int id)
     {
         return DepartmentRepo.FindByTaskId(id);
-    }
+    }*/
 }

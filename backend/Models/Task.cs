@@ -33,13 +33,7 @@ public class Task
     //public Project? Project { get; set; }                        //ManyToOne 
     //public int? ProjectId { get; set; }
 
-    //public Department? Department { get; set; }           //ManyToOne 
-                          
-    //public int? DepartmentId { get; set; }
-
-    //public User? User { get; set; }                        //ManyToOne 
-                                                                               
-    //public int? UserId { get; set; }
+    
 
     // constructores
     public Task() { }

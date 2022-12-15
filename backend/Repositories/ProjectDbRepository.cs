@@ -76,12 +76,25 @@ namespace backend.Repositories
         }
 
         //asociacion
-        public List<Department> FindByTaskId(int id)
+        public List<Project> FindByTaskId(int id)
         {
-            return Context.Departments
-               .Where(department => department.TaskId == id)
+            return Context.Projects
+               .Where(project => project.TaskId == id)
                .ToList();
         }
 
+        public List<Project> FindByUserId(int id)
+        {
+            return Context.Projects
+               .Where(project => project.UserId == id)
+               .ToList();
+        }
+
+        public List<Project> FindByDepartmentId(int id)
+        {
+            return Context.Projects
+               .Where(project => project.DepartmentId == id)
+               .ToList();
+        }
     }
 }
