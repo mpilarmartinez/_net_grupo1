@@ -27,6 +27,18 @@ export class ProjectService {
     return this.http.get<Project>(`${this.url}/${id}`);
   }
 
+  findByTaskId(id: number) {
+    return this.http.get<Project[]>(`${this.url}/task/${id}`);
+  }
+
+  findByUserId(id: number) {
+    return this.http.get<Project[]>(`${this.url}/user/${id}`);
+  }
+
+  findByDepartmentkId(id: number) {
+    return this.http.get<Project[]>(`${this.url}/department/${id}`);
+  }
+
   deleteByIdProject(id: number) {
     return this.http.delete(`${this.url}/${id}`);
   }

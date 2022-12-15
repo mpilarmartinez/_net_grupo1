@@ -20,10 +20,37 @@
     <mat-label>Status</mat-label>
     <input matInput formControlName="status">
   </mat-form-field>
-
+  <!--
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Tarea</mat-label>
-    <input matInput formControlName="task_project">
+    <input matInput formControlName="taskId">
+  </mat-form-field>-->
+  <!--
+  <mat-form-field appearance="fill">
+    <mat-label>Selector de tarea</mat-label>
+    <mat-select formControlName="taskId">
+      <mat-option *ngFor="let task of tasks" [value]="task.id">
+        {{task.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>-->
+
+  <mat-form-field appearance="fill">
+    <mat-label>Selector de usuario</mat-label>
+    <mat-select formControlName="userId">
+      <mat-option *ngFor="let user of users" [value]="user.id">
+        {{user.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Selector de departamento</mat-label>
+    <mat-select formControlName="departmentId">
+      <mat-option *ngFor="let department of departments" [value]="department.id">
+        {{department.name}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
   <!--<mat-form-field appearance="fill">

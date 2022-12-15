@@ -6,4 +6,14 @@ export interface Project {  //Typescript. Debe coincidir con json
 
   //asociaciones OnetoMany
   //tasks?: any[];
+
+  //asociacion ManyToOne
+  task?: any;
+  taskId?: number;
+
+  user?: any;
+  userId: number;
+
+  department?: any;
+  departmentId: number;
 }
