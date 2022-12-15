@@ -1,9 +1,12 @@
-﻿namespace backend.Repositories;
+﻿using Task = backend.Models.Task;
+
+namespace backend.Repositories;
 
 public class DepartmentDbRepository : IDepartmentRepository
 {
     //atributos
     private AppDbContext Context;
+
 
     //constructores
     public DepartmentDbRepository(AppDbContext context)
@@ -32,6 +35,12 @@ public class DepartmentDbRepository : IDepartmentRepository
         
         if (department.Id == 0)
             return CreateDepartment(department);
+
+        //Department departmentDb = FindByIdWithInclude(department.Id);
+        if (department == null)
+            throw new Exception("Department not found");
+        //departmentDb.Name = department.Name;
+        //departmentDb.TaskId = department.TaskId;
 
         // guardar solo aquellos atributos que interesen
         Context.Departments.Attach(department);
@@ -72,4 +81,19 @@ public class DepartmentDbRepository : IDepartmentRepository
         Context.SaveChanges();
         return true;
     }
+
+    /*public Department FindByIdWithInclude(int id)
+    {
+        return Context.Departments
+            .Include(department => department.Task)
+            .Where(department => department.Id == id)
+            .FirstOrDefault();
+    }*/
+    //asociacion
+    /*public List<Department> FindByTaskId(int id)
+    {
+        return Context.Departments
+           .Where(department => department.TaskId == id)
+           .ToList();
+    }*/
 }

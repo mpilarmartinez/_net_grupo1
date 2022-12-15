@@ -70,9 +70,9 @@ export class TaskFormComponent implements OnInit {
               date: taskFromBackend.date,
               status: taskFromBackend.status,
               importance: taskFromBackend.importance,
-              project: taskFromBackend.project,     //asociacion project
-              user: taskFromBackend.user,    //asociacion user
-              department: taskFromBackend.department    //asociacion user
+              //project: taskFromBackend.project,     //asociacion project
+              //user: taskFromBackend.user,    //asociacion user
+              //department: taskFromBackend.department    //asociacion user
             } as any);
 
         },

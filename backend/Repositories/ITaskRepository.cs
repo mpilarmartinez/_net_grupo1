@@ -28,5 +28,8 @@ namespace backend.Repositories;
         // borrar por id
         bool RemoveByIdTask(int id);
 
-    }
+        //List<Task> FindByProjectId(int id);
+        //List<Task> FindByDepartmentId(int id);
+        //List<Task> FindByUserId(int id);
+}
 

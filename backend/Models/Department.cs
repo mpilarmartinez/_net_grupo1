@@ -13,7 +13,8 @@ public class Department
     [Column("Name", TypeName = "varchar(75)", Order = 2)]
     public string Name { get; set; }
 
-    public List<Task>? tasks { get; set; }  //OneToMany
+    //public Task? Task { get; set; }  //OneToMany
+    //public int? TaskId { get; set; }
     
     //Asociasion Many to One un autor asocia a mas de un libro "TablaId" = Autor columna id
     //public Autor Autor { get; set; }

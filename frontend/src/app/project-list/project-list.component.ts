@@ -12,7 +12,7 @@ export class ProjectListComponent implements OnInit {
   projects: Project[] = [];
   // debe coincidir con json
   // para que aparezca la columna tareas
-  columnNames: string[] = ['id', 'name', 'status','tasks', 'actions'];
+  columnNames: string[] = ['id', 'name', 'status','task_project', 'actions'];
 
   constructor(private projectService: ProjectService) { }
 

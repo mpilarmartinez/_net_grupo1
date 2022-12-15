@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from '../models/project.model';
 import { ProjectService } from '../services/project.service';
-import { Task } from '../models/task.model';
-import { TaskService } from '../services/task.service';
+
 
 @Component({
   selector: 'app-project-detail',
@@ -17,7 +16,6 @@ export class ProjectDetailComponent implements OnInit {
 
   constructor(
     private projectService: ProjectService,
-    private taskService: TaskService,
     private activatedRoute: ActivatedRoute,
     private router: Router) { }
 
