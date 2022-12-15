@@ -1,0 +1,28 @@
+<h2>Login</h2>
+
+<form class="example-form" [formGroup]="editForm" (ngSubmit)="save()">
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+
+    <!--<mat-error *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty||editForm.get('email')!.touched)">
+      <span *ngIf="editForm.get('email')!.getError('required')">Nombre obligatorio</span>
+      <span *ngIf="editForm.get('email')!.getError('email')">Email debe tener un formato correcto</span>
+    </mat-error>-->
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" type="password">
+
+    <!--<mat-error *ngIf="editForm.get('password')!.invalid && (editForm.get('password')!.dirty||editForm.get('password')!.touched)">
+      <span *ngIf="editForm.get('password')!.getError('password')">Password obligatorio</span>
+      <span *ngIf="editForm.get('password')!.getError('minlength') || editForm.get('password')!.getError('maxlength')">Longitud debe estar entre 8 y 30</span>
+    </mat-error>-->
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Guardar</button>
+  <button mat-raised-button color="warn" routerLink="/books">Cancelar</button>
+</form>
+

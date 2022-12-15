@@ -31,6 +31,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     ProjectDetailComponent,
     UserFormComponent,
     UserListComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,10 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
       { path: 'projects', component: ProjectListComponent },
       { path: 'projects/:id/detail', component: ProjectDetailComponent },
       { path: 'projects/new', component: ProjectFormComponent },
-      { path: 'projects/:id/edit', component: ProjectFormComponent }
+      { path: 'projects/:id/edit', component: ProjectFormComponent },
+      //Login
+      { path: 'login', component: LoginComponent }
+
     ])
   ],
   providers: [],
