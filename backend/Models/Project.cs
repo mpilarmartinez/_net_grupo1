@@ -21,8 +21,8 @@ public class Project
     public string Task_project { get; set; }*/
 
 
-    // asociaciones 
-    public Task? Task { get; set; }  //OneToMany
+    // asociación Many To One 
+    public Task? Task { get; set; }
     public int? TaskId { get; set; }
 
     public User? User { get; set; }                        //ManyToOne 
