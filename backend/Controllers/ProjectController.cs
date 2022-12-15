@@ -29,7 +29,7 @@ public class ProjectController
     {
         return ProjectRepo.FindByID(id);
     }
-
+    /*
     [HttpGet("task/{id}")]
     public List<Project> FindByTaskId(int id)
     {
@@ -46,7 +46,7 @@ public class ProjectController
     public List<Project> FindByDepartmentId(int id)
     {
         return ProjectRepo.FindByDepartmentId(id);
-    }
+    }*/
 
     [HttpPost()] // POST api/projects
     public Project Create(Project project)

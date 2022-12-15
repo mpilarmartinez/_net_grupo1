@@ -17,19 +17,19 @@ public class Project
     [Column("Status")]
     public string Status { get; set; }
 
-    /*[Column("Task_project")]
+    /*[Column("Task_project")] este se puede borrar
     public string Task_project { get; set; }*/
 
 
     // asociación Many To One 
-    public Task? Task { get; set; }
-    public int? TaskId { get; set; }
+    //public Task? Task { get; set; }
+    //public int? TaskId { get; set; }
 
-    public User? User { get; set; }                        //ManyToOne 
-    public int? UserId { get; set; }
+    //public User? User { get; set; }                        //ManyToOne 
+    //public int? UserId { get; set; }
 
-    public Department? Department { get; set; }           //ManyToOne 
-    public int? DepartmentId { get; set; }
+    //public Department? Department { get; set; }           //ManyToOne 
+    //public int? DepartmentId { get; set; }
     //public ICollection<Task>? tasks { get; set; }   //OneToMany 
 
 

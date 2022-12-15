@@ -70,6 +70,25 @@ namespace backend.Repositories
             return taskrepo;
         
         }
-        
+
+        public List<Task> FindByProjectId(int id)
+        {
+            return Context.Tasks
+               .Where(project => project.ProjectId == id)
+               .ToList();
+        }
+        public List<Task> FindByUserId(int id)
+        {
+            return Context.Tasks
+               .Where(task => task.UserId == id)
+               .ToList();
+        }
+        public List<Task> FindByDepartmentId(int id)
+        {
+            return Context.Tasks
+               .Where(task => task.DepartmentId == id)
+               .ToList();
+        }
+
     }
 }
