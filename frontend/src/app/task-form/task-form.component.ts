@@ -29,7 +29,8 @@ export class TaskFormComponent implements OnInit {
     return new FormGroup({
       id: new FormControl({ value: null, disabled: true }),
       name: new FormControl('', { nonNullable: true }),
-      date: new FormControl('', { nonNullable: true }),
+      //date: new FormControl('', { nonNullable: true }),
+      date: new FormControl(),
       status: new FormControl('', { nonNullable: true }),
       importance: new FormControl('', { nonNullable: true }),
       //project: new FormControl('', { nonNullable: true }),   //asociacion project

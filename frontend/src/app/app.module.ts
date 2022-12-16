@@ -96,7 +96,9 @@ import { TaskImportancePipe } from './shared/task-importance.pipe';
       { path: 'projects/:id/edit', component: ProjectFormComponent }
     ])
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
