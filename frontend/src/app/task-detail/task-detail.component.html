@@ -13,24 +13,30 @@
     </mat-card-content>
 
     <mat-card-content>
-      <p><strong>Status:</strong> {{task.status}}</p>
+      <p><strong>Status:</strong> {{task.status | taskStatus}}</p>
     </mat-card-content>
 
-    <mat-card-content>
-      <p><strong>Importance:</strong> {{task.importance}}</p>
-    </mat-card-content>
+
+    <!--<mat-card-content [ngSwitch]="task.status">
+      <p *ngSwitchCase="0"><strong>Status: </strong> SIN_COMENZAR </p>
+      <p *ngSwitchCase="1"><strong>Status: </strong> EN_PROCESO </p>
+      <p *ngSwitchCase="2"><strong>Status: </strong> FINALIZADA </p>
+  </mat-card-content>-->
+
 
     <mat-card-content>
-      <p><strong>Project:</strong> {{task.project}}</p>
+      <p><strong>Importance:</strong> {{task.importance | taskImportance}}</p>
     </mat-card-content>
 
-    <mat-card-content>
-      <p><strong>User:</strong> {{task.user}}</p>
-    </mat-card-content>
-
-    <mat-card-content>
-      <p><strong>Department:</strong> {{task.department}}</p>
-    </mat-card-content>
+    <!--<mat-card-content>
+    <p><strong>Project:</strong> {{task.project}}</p>
+  </mat-card-content>-->
+    <!--<mat-card-content>
+    <p><strong>User:</strong> {{task.user}}</p>
+  </mat-card-content>-->
+    <!--<mat-card-content>
+    <p><strong>Department:</strong> {{task.department}}</p>
+  </mat-card-content>-->
 
   </div>
 

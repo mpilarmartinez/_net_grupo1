@@ -20,12 +20,17 @@ public class Task
     public DateTime Date { get; set; }
 
 
-    [Column("Status")]
-    public string Status { get; set; }
+    /*[Column("Status")]
+    public string Status { get; set; }*/
 
+    [Column(TypeName = "varchar(50)")]
+    public TaskStatus Status { get; set; }
 
-    [Column("Importance")]
-    public string Importance { get; set; }
+    [Column(TypeName = "varchar(50)")]
+    public TaskImportance Importance { get; set; }
+
+    /*[Column("Importance")]
+    public string Importance { get; set; }*/
 
 
     // asociaciones 
