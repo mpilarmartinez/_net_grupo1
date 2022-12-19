@@ -72,7 +72,7 @@ public class DepartmentDbRepository : IDepartmentRepository
     public bool RemoveByIdDepartment(int id)
     {
 
-        Department department = FindByIdDepartment(id);
+       Department department = FindByIdDepartment(id);
         if (department == null)
             return false;
 
@@ -82,7 +82,7 @@ public class DepartmentDbRepository : IDepartmentRepository
         return true;
     }
 
-    /*public Department FindByIdWithInclude(int id)
+    public Department FindByIdWithInclude(int id)
     {
         return Context.Departments
             .Include(department => department.Task)

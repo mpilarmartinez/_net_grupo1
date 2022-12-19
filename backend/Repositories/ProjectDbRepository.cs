@@ -65,8 +65,7 @@ namespace backend.Repositories
             Project projectrepo = FindByID(project.Id);
             projectrepo.Name = project.Name;
             projectrepo.Status = project.Status;
-            //projectrepo.TaskId = project.TaskId;
-            //projectrepo.Task_project = project.Task_project;
+            projectrepo.Task_project = project.Task_project;
 
             Context.Projects.Update(projectrepo);
             Context.SaveChanges();

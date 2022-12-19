@@ -17,35 +17,57 @@
   </mat-form-field>
 
 
-  <mat-form-field class="example-full-width" appearance="fill">
+  <!--<mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Fecha</mat-label>
     <input matInput formControlName="date">
-  </mat-form-field>
+  </mat-form-field>-->
 
   <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Fecha</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date">
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
-    <input matInput formControlName="status">
+    <mat-select formControlName="status">
+      <mat-option [value]="0">SIN_COMENZAR</mat-option>
+      <mat-option [value]="1">EN_PROCESO</mat-option>
+      <mat-option [value]="2">FINALIZADA</mat-option>
+    </mat-select>
   </mat-form-field>
 
-  <mat-form-field class="example-full-width" appearance="fill">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Importance</mat-label>
+    <mat-select formControlName="importance">
+      <mat-option [value]="0">BAJA</mat-option>
+      <mat-option [value]="1">MEDIA</mat-option>
+      <mat-option [value]="2">ALTA</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <!--<mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Importance</mat-label>
     <input matInput formControlName="importance">
-  </mat-form-field>
+  </mat-form-field>-->
 
-  <mat-form-field class="example-full-width" appearance="fill">
+  <!--<mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Project</mat-label>
     <input matInput formControlName="project">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width" appearance="fill">
+  </mat-form-field>-->
+  <!--<mat-form-field class="example-full-width" appearance="fill">
     <mat-label>User</mat-label>
     <input matInput formControlName="user">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width" appearance="fill">
+  </mat-form-field>-->
+  <!--<mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Department</mat-label>
     <input matInput formControlName="department">
-  </mat-form-field>
+  </mat-form-field>-->
 
 
   <button mat-raised-button color="primary" type="submit">Guardar</button>

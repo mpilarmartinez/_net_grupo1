@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from "@angular/material/core";
 //modulo router
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +32,6 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -47,13 +47,12 @@ import { LoginComponent } from './login/login.component';
     ProjectDetailComponent,
     UserFormComponent,
     UserListComponent,
-    UserDetailComponent,
-    LoginComponent
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-
+    MatNativeDateModule,
     MatButtonModule,
     MatTableModule,
     MatIconModule,
@@ -96,7 +95,9 @@ import { LoginComponent } from './login/login.component';
 
     ])
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

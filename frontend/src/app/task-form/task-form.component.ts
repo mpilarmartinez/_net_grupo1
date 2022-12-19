@@ -19,9 +19,9 @@ export class TaskFormComponent implements OnInit {
 
   constructor(
     private taskService: TaskService,
-    private projectService: ProjectService,  //asociacion Project
-    private userService: UserService,  //asociacion User
-    private taskdepartmentService: TaskdepartmentService,  //asociacion Department
+    //private projectService: ProjectService,  //asociacion Project
+    //private userService: UserService,  //asociacion User
+    //private taskdepartmentService: TaskdepartmentService,  //asociacion Department
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
@@ -29,12 +29,13 @@ export class TaskFormComponent implements OnInit {
     return new FormGroup({
       id: new FormControl({ value: null, disabled: true }),
       name: new FormControl('', { nonNullable: true }),
-      date: new FormControl('', { nonNullable: true }),
+      //date: new FormControl('', { nonNullable: true }),
+      date: new FormControl(),
       status: new FormControl('', { nonNullable: true }),
       importance: new FormControl('', { nonNullable: true }),
-      project: new FormControl('', { nonNullable: true }),   //asociacion project
-      user: new FormControl('', { nonNullable: true }),   //asociacion user
-      department: new FormControl('', { nonNullable: true })   //asociacion department
+      //project: new FormControl('', { nonNullable: true }),   //asociacion project
+      //user: new FormControl('', { nonNullable: true }),   //asociacion user
+      //department: new FormControl('', { nonNullable: true })   //asociacion department
     });
   }
 
@@ -57,7 +58,6 @@ export class TaskFormComponent implements OnInit {
     });
   }
 
-
   private getTaskAndLoadInForm(id: string) {
     this.taskService.findByIdTask(Number(id)).subscribe(
       {
@@ -74,7 +74,6 @@ export class TaskFormComponent implements OnInit {
               //user: taskFromBackend.user,    //asociacion user
               //department: taskFromBackend.department    //asociacion user
             } as any);
-
         },
         error: err => console.log(err)
       }
@@ -87,9 +86,9 @@ export class TaskFormComponent implements OnInit {
       date: this.editForm.get("date")?.value,
       status: this.editForm.get("status")?.value,
       importance: this.editForm.get("importance")?.value,
-      project: this.editForm.get("project")?.value,           //asociacion project
-      user: this.editForm.get("user")?.value,                 //asociacion user
-      department: this.editForm.get("department")?.value,    //asociacion department
+      //project: this.editForm.get("project")?.value,           //asociacion project
+      //user: this.editForm.get("user")?.value,                 //asociacion user
+      //department: this.editForm.get("department")?.value,    //asociacion department
     } as any;
 
     //ideDepartment igual al json
