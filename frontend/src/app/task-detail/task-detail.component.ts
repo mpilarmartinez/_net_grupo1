@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Task } from '../models/task.model';
 import { TaskService } from '../services/task.service';
-import { ProjectService } from '../services/project.service';
-import { UserService } from '../services/user.service';
-import { TaskdepartmentService } from '../services/taskdepartment.service';
 
 
 @Component({
@@ -16,7 +13,7 @@ export class TaskDetailComponent implements OnInit {
 
   task: Task | undefined;
 
-  constructor(private taskService: TaskService, private projectService: ProjectService, private userService: UserService, private taskdepartmentService: TaskdepartmentService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private taskService: TaskService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe({

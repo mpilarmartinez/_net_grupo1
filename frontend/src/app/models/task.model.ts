@@ -15,7 +15,7 @@ export interface Task {  //Typescript. Debe coincidir con json
   project?: any;
   projectId?: number;
 
-  //department?: any;
+  department?: any;
   //departmentId?: number;
 
   user?: any;

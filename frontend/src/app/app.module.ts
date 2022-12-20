@@ -32,6 +32,9 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { LoginComponent } from './login/login.component';
+import { TaskStatusPipe } from './shared/task-status.pipe';
+import { TaskImportancePipe } from './shared/task-importance.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     ProjectDetailComponent,
     UserFormComponent,
     UserListComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    LoginComponent,
+    TaskStatusPipe,
+    TaskImportancePipe
   ],
   imports: [
     BrowserModule,
