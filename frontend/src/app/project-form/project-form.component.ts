@@ -40,7 +40,7 @@ export class ProjectFormComponent implements OnInit {
       name: new FormControl('', { nonNullable: true }),
       status: new FormControl('', { nonNullable: true }),
 
-      taskId: new FormControl(),
+      task_project: new FormControl(),
       userId: new FormControl(),
       departmentId: new FormControl()
     });
