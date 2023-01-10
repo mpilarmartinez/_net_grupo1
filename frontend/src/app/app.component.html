@@ -1,31 +1,37 @@
 <div id="titulo">
-
+  <!--<strong *ngIf="user">{{user.name}}</strong>-->
   <!--<h1>Titulo de Angular</h1>-->
   <img src="../assets/img/default.png" alt="logo" />
 </div>
 
 <div id="body">
   <div id="izquierda">
+    <button mat-raised-button color="primary" [routerLink]="['/']" class="home">
+      Home
+    </button>
 
-    <button mat-raised-button color="primary" [routerLink]="['/projects']">
+    <button mat-raised-button color="primary" [routerLink]="['/projects']" class="projects">
       Proyectos
     </button>
 
-    <button mat-raised-button color="primary" [routerLink]="['/tasks']">
+    <button mat-raised-button color="primary" [routerLink]="['/tasks']" class="tasks">
       Tareas
     </button>
 
-    <button mat-raised-button color="primary" [routerLink]="['/users']">
+    <button mat-raised-button color="primary" [routerLink]="['/users']" class="users">
       Usuarios
     </button>
 
-    <button mat-raised-button color="primary" [routerLink]="['/departments']">
+    <button mat-raised-button color="primary" [routerLink]="['/departments']" class="depaartments">
       Departamentos
     </button>
 
-    <button mat-raised-button color="accent" [routerLink]="['/login']">
-      Login
-    </button>
+    <!--<button mat-raised-button color="accent" [routerLink]="['/login']">
+    Login
+  </button>-->
+    <!--<button mat-raised-button color="warn" *ngIf="user" [routerLink]="['/']">
+    Logout
+  </button>-->
   </div>
 
   <div id="derecha">
@@ -34,6 +40,7 @@
 
   <div id="central">
     <!--aqui es donde se visualiza la pagina creada-->
+    
     <router-outlet></router-outlet>
   </div>
 

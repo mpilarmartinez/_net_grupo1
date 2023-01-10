@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00ffff;
+}
+
+img {
+  max-width: 40%;
+}
+
+.image {
+  flex-basis: 40%;
+}
+
+.text {
+  font-size: 30px;
+  padding-left: 5px;
+}
+
+p {
+  font-family: Rockwell;
+}

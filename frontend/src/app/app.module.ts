@@ -35,6 +35,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { LoginComponent } from './login/login.component';
 import { TaskStatusPipe } from './shared/task-status.pipe';
 import { TaskImportancePipe } from './shared/task-importance.pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { TaskImportancePipe } from './shared/task-importance.pipe';
     UserDetailComponent,
     LoginComponent,
     TaskStatusPipe,
-    TaskImportancePipe
+    TaskImportancePipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ import { TaskImportancePipe } from './shared/task-importance.pipe';
     //router
     RouterModule.forRoot([
       //HOME
-      { path: '', redirectTo: 'poner la principal', pathMatch: 'full' },
+      //{ path: '', redirectTo: 'poner la principal', pathMatch: 'full' },
+      { path: '', component: HomeComponent },
       //Department
       { path: 'departments', component: TaskdepartmentListComponent },
       { path: 'departments/:id/detail', component: TaskdepartmentDetailComponent },

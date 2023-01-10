@@ -14,9 +14,9 @@ export class UserFormComponent implements OnInit {
   user: User | undefined;
   editForm = this.createFormGroup();
   error: boolean = false;
-  users = [{ value: 0, permission: 'Administrador' },
+  /*users = [{ value: 0, permission: 'Administrador' },
   { value: 1, permission: 'Usuario' },
-  { value: 2, permission: 'Visitante' }];
+  { value: 2, permission: 'Visitante' }];*/
 
   constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
